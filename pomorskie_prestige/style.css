@@ -1,0 +1,2625 @@
+/*!
+Theme Name: pomorskie_prestige
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: pomorskie_prestige
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+pomorskie_prestige is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+
+/* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+
+
+/* Document
+	 ========================================================================== */
+
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+    line-height: 1.15;
+    /* 1 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+}
+
+
+/* Sections
+	 ========================================================================== */
+
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+    margin: 0;
+}
+
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+
+/* Grouping content
+	 ========================================================================== */
+
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+    box-sizing: content-box;
+    /* 1 */
+    height: 0;
+    /* 1 */
+    overflow: visible;
+    /* 2 */
+}
+
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: 1em;
+    /* 2 */
+}
+
+
+/* Text-level semantics
+	 ========================================================================== */
+
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+    background-color: transparent;
+}
+
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+    border-bottom: none;
+    /* 1 */
+    text-decoration: underline;
+    /* 2 */
+    text-decoration: underline dotted;
+    /* 2 */
+}
+
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: 1em;
+    /* 2 */
+}
+
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+
+/* Embedded content
+	 ========================================================================== */
+
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+    border-style: none;
+}
+
+
+/* Forms
+	 ========================================================================== */
+
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    /* 1 */
+    font-size: 100%;
+    /* 1 */
+    line-height: 1.15;
+    /* 1 */
+    margin: 0;
+    /* 2 */
+}
+
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+    /* 1 */
+    overflow: visible;
+}
+
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+    /* 1 */
+    text-transform: none;
+}
+
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+
+legend {
+    box-sizing: border-box;
+    /* 1 */
+    color: inherit;
+    /* 2 */
+    display: table;
+    /* 1 */
+    max-width: 100%;
+    /* 1 */
+    padding: 0;
+    /* 3 */
+    white-space: normal;
+    /* 1 */
+}
+
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+    vertical-align: baseline;
+}
+
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+    overflow: auto;
+}
+
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    /* 1 */
+    padding: 0;
+    /* 2 */
+}
+
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    /* 1 */
+    outline-offset: -2px;
+    /* 2 */
+}
+
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    /* 1 */
+    font: inherit;
+    /* 2 */
+}
+
+
+/* Interactive
+	 ========================================================================== */
+
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+    display: block;
+}
+
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+    display: list-item;
+}
+
+
+/* Misc
+	 ========================================================================== */
+
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+    display: none;
+}
+
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+    display: none;
+}
+
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+    color: #404040;
+    font-family: 'Lato';
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+}
+
+h2 {
+    font-size: 22px;
+    color: #000;
+    margin-top: 13px;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    margin: 0 1.5em;
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 15px;
+    font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+mark,
+ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+big {
+    font-size: 125%;
+}
+
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+    box-sizing: inherit;
+}
+
+body {
+    background: #fff;
+    /* Fallback for when there is no custom background color defined. */
+}
+
+hr {
+    background-color: #ccc;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+    margin: 0 0 1.5em 3em;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+li>ul,
+li>ol {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}
+
+img {
+    height: auto;
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */
+}
+
+figure {
+    margin: 1em 0;
+    /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+    margin: 0 0 1.5em;
+    width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    border: 1px solid;
+    border-color: #ccc #ccc #bbb;
+    border-radius: 3px;
+    background: #e6e6e6;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: .6em 1em .4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+    border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+    color: #111;
+}
+
+select {
+    border: 1px solid #ccc;
+}
+
+textarea {
+    width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+
+a {
+    color: #000;
+}
+
+a:visited {
+    color: #000;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #000;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+.main-navigation {
+    clear: both;
+    display: block;
+    float: none;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    margin-top: -27px;
+}
+
+.fixed {
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+    background: #fff;
+    width: 100% !important;
+    min-height: 100px;
+    padding-top: 15px;
+}
+
+.main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.main-navigation ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+    left: -999em;
+    top: 0;
+}
+
+.main-navigation ul ul li:hover>ul,
+.main-navigation ul ul li.focus>ul {
+    left: 100%;
+}
+
+.main-navigation ul ul a {
+    width: 200px;
+}
+
+.main-navigation ul li:hover>ul,
+.main-navigation ul li.focus>ul {
+    left: auto;
+}
+
+.main-navigation li {
+    float: none;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+}
+
+.main-navigation a {
+    display: block;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+    padding-bottom: 2px;
+}
+
+.main-navigation a:hover {
+    border-bottom: 1px solid;
+    padding-bottom: 0px;
+}
+
+
+/* Small menu. */
+
+.menu-toggle,
+.main-navigation.toggled ul {
+    display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+    .menu-toggle {
+        display: none;
+    }
+    .main-navigation ul {
+        display: block;
+    }
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+    float: left;
+    width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+
+/* Text meant only for screen readers. */
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+
+/* Do not show the outline on the skip link target. */
+
+#content[tabindex="-1"]:focus {
+    outline: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+    clear: both;
+}
+
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+
+.widget {
+    margin: 0 0 1.5em;
+    /* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+    max-width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+
+.sticky {
+    display: block;
+}
+
+.post,
+.page {
+    margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+#kontakt {
+    margin-top: 55px;
+    font-size: 17px;
+}
+
+h2.partnerzy {
+    font-size: 27px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+h2.partnerzy_med {
+    font-size: 27px;
+    margin-top: 53px;
+    margin-bottom: 35px;
+}
+
+.otoczka_partnerzy {
+    display: flex;
+    justify-content: center;
+}
+
+.logo_partner {
+    float: left;
+}
+
+.logo_partner2 {
+    float: left;
+    max-width: 118px;
+}
+
+.logo_partner3 {
+    float: left;
+    max-width: 162px;
+    margin-right: 73px;
+}
+
+.logo_partner4 {
+    float: left;
+}
+
+.logo_partner5 {
+    float: left;
+    max-width: 250px;
+}
+
+.logo_partner6 {
+    float: left;
+    max-width: 250px;
+}
+
+.post,
+.page {
+    width: 100%;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 1.5em 0 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+    /* Theme Footer (when set to scrolling) */
+    display: none;
+}
+
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+
+/* Make sure embeds and iframes fit their containers. */
+
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+
+/* Make sure logo link wraps around logo image. */
+
+.custom-logo-link {
+    display: inline-block;
+}
+
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+    color: #a6a6bd;
+    font-size: 14px;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+
+.gallery-caption {
+    display: block;
+}
+
+.site-branding {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#email {
+    margin-right: 45px;
+}
+
+#fb {
+    margin-right: 20px;
+}
+
+#left {
+    float: left;
+    width: 85%;
+    display: flex;
+    padding-left: 14px;
+}
+
+#right {
+    float: right;
+    width: 15%;
+    display: flex;
+}
+
+#menu-item-21-pl {
+    position: absolute;
+    top: 28%;
+}
+
+#menu-item-21-en {
+    position: absolute;
+    top: 28%;
+}
+
+.widgettitle {
+    display: none;
+}
+
+.postthumb_wysz {
+    float: left;
+    width: 25%;
+    min-height: 470px;
+    padding: 16px;
+}
+
+.entry-title2 {
+    font-size: 17px;
+    min-height: 75px;
+    margin-top: 20px;
+}
+
+.skrot_wysz {
+    font-size: 16px;
+    color: #808080;
+}
+
+.sanpop-search-box .search-btn {
+    padding: 10px 15px;
+    background: #f8af7c;
+    color: #fff;
+    display: inline-block;
+}
+
+#polylang-4 ul {
+    display: flex;
+    list-style: none;
+    margin-top: -21px;
+    font-size: 15px;
+    margin-left: 24px;
+    position: relative;
+    top: 23px;
+    left: -31px;
+}
+
+.lang-item-10 {
+    margin-right: 20px;
+    border-right: 1px solid;
+    padding-right: 4px;
+    color: #a6a6a6;
+}
+
+.lang-item-13 {
+    margin-left: -15px;
+}
+
+.lang-item a {
+    color: #a6a6a6;
+}
+
+.comment-form-comment {}
+
+.form-submit {}
+
+#wpis {}
+
+a:hover {
+    text-decoration: none;
+}
+
+#otoczka {
+    float: left;
+    position: absolute;
+    bottom: 12px;
+    max-width: 400px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.76);
+    text-align: center;
+    min-height: 195px;
+}
+
+#otoczka h2 {
+    font-size: 19px;
+    max-width: 300px;
+    text-align: center;
+    margin: auto;
+    color: #000;
+}
+
+#otoczka a {
+    margin-top: 20px !important;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.data {
+    color: #a6a6a6;
+    font-style: italic;
+    margin-top: 15px;
+    margin-bottom: 26px;
+}
+
+.cat {
+    width: 72%;
+    border-left: 1px solid #d5d5d5;
+    border-right: 1px solid #d5d5d5;
+    border-top: 1px solid #d5d5d5;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.cat a {
+    color: #d5d5d5;
+}
+
+.mega-current-post-ancestor {
+    text-decoration: underline !important;
+}
+
+.daj_flex {
+    display: flex;
+    margin-top: 16px;
+    max-width: 822px;
+}
+
+.daj_border {
+    border: 1px solid #d5d5d5;
+}
+
+#medical {
+    margin-right: 18px;
+}
+
+.daj_border .cat {
+    border: 0px;
+}
+
+.tytul {
+    font-size: 18px;
+    line-height: 27px;
+    padding-top: 30px;
+    padding-left: 28px;
+    padding-right: 30px;
+    font-weight: 600;
+}
+
+.tytul_sidebar_wpis {
+    font-size: 18px;
+    line-height: 27px;
+    padding-top: 15px;
+    padding-left: 28px;
+    padding-right: 30px;
+    text-align: center;
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    padding-bottom: 15px;
+    max-width: 270px;
+    margin: auto;
+    margin-bottom: auto;
+    margin-bottom: 9px;
+    text-transform: uppercase;
+}
+
+.naglowek_sidebar_wpis {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 28px;
+}
+
+.skrot {
+    padding-top: 30px;
+    padding-left: 28px;
+    padding-right: 30px;
+}
+
+.data_prawa {
+    float: right;
+    padding-right: 21px;
+    padding-bottom: 37px;
+    color: #3d3d3d;
+    font-style: italic;
+    position: absolute;
+    right: 12px;
+    bottom: -15px;
+}
+
+#thumb_baner {
+    width: 386px;
+    height: 567px;
+    padding: 3px;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+#thumb {
+    width: 100%;
+    height: 270px;
+    background-size: cover !important;
+}
+
+#post-94,
+#post-10009 {
+    max-width: 960px;
+    margin: auto;
+}
+
+.full a #thumb {
+    width: 100%;
+    height: 368px;
+    background-size: cover !important;
+}
+
+#thumb_sidebar_wpis {
+    width: 100%;
+    height: 270px;
+    background-size: cover !important;
+    max-width: 313px;
+    margin-left: 34px;
+    background-position: center !important;
+    margin-bottom: 10px;
+}
+
+#tytul_sidebar_wpis {
+    text-align: center;
+}
+
+#sidebar_glowna>.widget-area {
+    float: left;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+}
+
+#sidebar_glowna {
+    width: 31.3%;
+}
+
+#kolumna {
+    float: left;
+    width: 47%;
+    min-height: 712px;
+    margin-right: 22px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.max {
+    max-width: 822px;
+}
+
+.page-item-15008,
+.page-item-14983,
+.page-item-15010,
+.page-item-14989 {
+    display: none;
+}
+
+#kategorie_slider {
+    max-width: 1241px;
+    width: 100%;
+    margin-top: 31px;
+}
+
+#post-40 {
+    display: none;
+}
+
+.owl-carousel .owl-item {}
+
+.container {
+    max-width: 1241px !important;
+}
+
+#bg_footer {
+    background: #f6f6f6;
+    padding: 30px;
+}
+
+ul {
+    list-style: none;
+}
+
+#footer-menu>li {
+    display: inline-block;
+    padding-right: 20px;
+    text-transform: uppercase;
+    border-right: 1px solid;
+    padding-left: 15px;
+}
+
+#footer-menu>ul>li {
+    display: inline-block;
+    padding-right: 20px;
+    text-transform: uppercase;
+    border-right: 1px solid;
+    padding-left: 15px;
+}
+
+#footer-menu {
+    margin: auto;
+    text-align: center;
+}
+
+#footer-menu>li:nth-child(4) {
+    border-right: 0px solid;
+}
+
+#footer-menu>ul>li:nth-child(5) {
+    border-right: 0px solid;
+}
+
+.podtytul_wpis>a:nth-child(2) {
+    display: none;
+}
+
+.podtytul_wpis>a:nth-child(3) {
+    display: none;
+}
+
+.podtytul_wpis>a:nth-child(4) {
+    display: none;
+}
+
+.podtytul_wpis>a:nth-child(5) {
+    display: none;
+}
+
+.category-rekomendowane-resturacje .restauracja {
+    display: none;
+}
+
+.category-wydarzenia .restauracja {
+    display: none;
+}
+
+.category-regionalne-produkty .restauracja {
+    display: none;
+}
+
+.category-browary-rzemieslnicze .restauracja {
+    display: none;
+}
+
+.category-lokalni-dostawcy .restauracja {
+    display: none;
+}
+
+.menu-footer-container {
+    margin: auto;
+    text-align: center;
+}
+
+#social_footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 li.mega-menu-item li.mega-menu-item-has-children>a.mega-menu-link::after {
+    display: none;
+}
+
+p a:hover {
+    color: #009dff;
+    text-decoration: underline;
+}
+
+p a {
+    color: #009dff;
+}
+
+#colophon {
+    text-align: center;
+    color: #555;
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+#cookie-law-info-again {
+    display: none !important;
+}
+
+.content-area>.site-main>.post-40>.entry-header>h1 {
+    display: none;
+}
+
+#linia {
+    width: 100%;
+    height: 1px;
+    background: #d2d2d2;
+}
+
+#responsive-menu-pro-header-bar-items-container {
+    display: none;
+}
+
+#responsive-menu-pro-header {
+    display: none !important;
+}
+
+#responsive-menu-pro-header-bar-button {
+    position: relative;
+}
+
+#responsive-menu-pro-header-bar-button::after {
+    content: '';
+    height: 45px;
+    width: 1px;
+    background: #d2d2d2;
+    position: absolute;
+    top: 29px;
+    right: -14px;
+}
+
+#bsa-block-336--280>.bsaProItems {
+    display: flex;
+    justify-content: center;
+}
+
+#bsa-block-300--600 {
+    margin-left: 39px;
+}
+
+.custombox-fullscreen.custombox-content>* {
+    width: 50%;
+    max-height: 50%;
+    transform: translate(50%, 50%);
+}
+
+input[type="search"]:focus {
+    color: #fff !important;
+}
+
+.sanpop-modal {
+    background: rgba(153, 153, 153, 0.92) !important;
+}
+
+#s {
+    color: #000 !important;
+    text-align: left !important;
+}
+
+.sanpop-search-box input[type="search"] {
+    color: #fff !important;
+    border-bottom: 1px solid #e1e1e1 !important;
+}
+
+.search-btn {
+    cursor: pointer;
+}
+
+.category-find-a-restaurant h1 {
+    display: none;
+}
+
+.category-znajdz-restauracje h1 {
+    display: none;
+}
+
+::placeholder {
+    color: #000 !important;
+}
+
+.single-post .site .site-content .container .row #sidebar_glowna .widget-area {
+    padding-left: 20px;
+}
+
+.single-post .site .site-content .container .row #sidebar_glowna .widget-area #text-2 {
+    display: none;
+}
+
+.custombox-open.custombox-overlay {
+    opacity: 0 !important;
+}
+
+.post-content {
+    text-align: center;
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    margin-top: 15px;
+    padding-top: 20px;
+}
+
+#thumb_archive {
+    height: 261px;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+.bsaProContainer .bsaProHeader {
+    display: none;
+}
+
+.bsaProContainer .bsaProItemInner__img {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+.title_archive {
+    font-size: 22px;
+    color: #000;
+    margin-top: 13px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+a.cat_title_wpis {
+    text-transform: uppercase;
+    color: #a6a6a6;
+}
+
+.flexis {
+    display: flex;
+}
+
+.insta {
+    text-align: center;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-top: 70px;
+    font-size: 20px;
+    width: 100%;
+    border-bottom: 1px solid #d5d5d5;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+#thumb_wpis {
+    width: 100%;
+    min-height: 500px;
+    height: 100%;
+    margin-top: 36px;
+    background-size: cover !important;
+}
+
+#fotograf_wpis {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.tytul_wpis {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#podtytul {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.podtytul_wpis {
+    padding-right: 110px;
+    text-transform: uppercase;
+    color: #a6a6a6;
+}
+
+.podtytul_wpis a {
+    color: #a6a6a6;
+}
+
+#daj_bordery {
+    width: 100%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 25px;
+    margin-bottom: 43px;
+}
+
+.partner_tytul {
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.partner_child {
+    font-weight: bold;
+    padding-right: 35px;
+}
+
+#partner {
+    display: flex;
+    margin-top: 35px;
+    margin-bottom: 24px;
+}
+
+.polecane_tytul {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 40px;
+    display: block;
+}
+
+.custombox-fullscreen .sanpop-close {
+    margin-top: 0px;
+}
+
+#menu1 {
+    line-height: 30px;
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#menu2 {
+    text-transform: uppercase;
+    line-height: 30px;
+    margin-top: 22px;
+}
+
+#panel_menu {
+    position: fixed;
+    left: -410px;
+    max-width: 400px;
+    width: 100%;
+    top: 0px;
+    background: #fff;
+    z-index: 9999999;
+    height: 100%;
+}
+
+#logo_menu img {
+    margin: auto;
+    text-align: center;
+    display: block;
+    padding-left: 28px;
+    margin-top: 40px;
+}
+
+#menu_cale {
+    width: 100%;
+}
+
+#social_menu #left {
+    padding-left: 90px;
+}
+
+#social_menu #right {}
+
+#social_menu #left #email {
+    margin-right: 19px;
+}
+
+#otworz_menu {
+    background: url('/wp-content/themes/pomorskie_prestige/img/menu_rozwin.jpg');
+    width: 18px;
+    height: 15px;
+    margin-top: 41px;
+    position: relative;
+    left: 14px;
+    cursor: pointer;
+}
+
+#otworz_menu::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: #d2d2d2;
+    position: absolute;
+    right: -26px;
+    top: -10px;
+}
+
+#zamknij_menu {
+    float: right;
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+.partner_child img {
+    max-width: 100%;
+    height: 120px;
+    width: 100%;
+}
+
+.partner_child a {
+    color: #009dff;
+    margin-top: 47px;
+    display: block;
+}
+
+.partner_child:nth-child(3) {
+    margin-top: 47px;
+    display: block;
+}
+
+.textwidget p a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.textwidget>p>a {
+    color: #000;
+    text-decoration: none;
+}
+
+body .accessability_container.dark_theme.accessability_container.active,
+body .accessability_container.dark_theme #access_container,
+body .accessability_container.dark_theme .access_container_inner,
+body .accessability_container.dark_theme .a_module,
+body .accessability_container.dark_theme .a_module_title,
+body .accessability_container.dark_theme .a_module_exe,
+body .accessability_container.dark_theme .font_resizer a,
+body .accessability_container.dark_theme .contrast_trigger {
+    background: #f2f2f2 !important;
+    color: #000 !important;
+}
+
+body .accessability_container button.wah-action-button {
+    background: #f8af7c !important;
+    color: #000 !important;
+}
+
+#contrast_trigger {
+    background: #f8af7c !important;
+}
+
+.wpgmza-modern-marker-open-button {
+    z-index: 99 !important;
+}
+
+button.close_container {
+    background: #f8af7c !important;
+    color: #000 !important;
+}
+
+.wpdiscuz-front-actions {
+    display: none;
+}
+
+.oko {
+    background: url('/wp-content/themes/pomorskie_prestige/img/wca.jpg') no-repeat;
+    width: 26px;
+    height: 15px;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+#social_menu .oko {
+    margin-top: 3px;
+    margin-right: 20px;
+}
+
+#lupa {
+    float: left;
+    width: 100%;
+    margin-left: 90px;
+    margin-top: 15px;
+}
+
+#social_menu {
+    display: block;
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    float: left;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 19px;
+}
+
+.owl-prev {
+    background: url('/wp-content/themes/pomorskie_prestige/img/left_arrow_slider.png') no-repeat !important;
+    width: 63px;
+    height: 64px;
+}
+
+.owl-next {
+    background: url('/wp-content/themes/pomorskie_prestige/img/right_arrow_slider.png') no-repeat !important;
+    width: 63px;
+    height: 64px;
+    float: right;
+    margin-right: 24px;
+}
+
+.owl-prev span {
+    display: none;
+}
+
+.owl-next span {
+    display: none;
+}
+
+.owl-nav {
+    position: absolute;
+    top: 42%;
+    width: 100%;
+}
+
+.aicon_link {
+    display: none;
+}
+
+.podtytul_social {
+    display: flex;
+}
+
+#fb_wpis {
+    background: url('/wp-content/themes/pomorskie_prestige/img/fb_wpis.jpg') no-repeat;
+    width: 11px;
+    height: 22px;
+    padding-right: 30px;
+}
+
+#insta_wpis {
+    background: url('/wp-content/themes/pomorskie_prestige/img/insta_wpis.jpg') no-repeat;
+    width: 24px;
+    height: 24px;
+    padding-right: 43px;
+}
+
+#twitter_wpis {
+    background: url('/wp-content/themes/pomorskie_prestige/img/twitter_wpis.jpg') no-repeat;
+    width: 21px;
+    height: 24px;
+}
+
+#loadmore {
+    margin: auto;
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+    background: #f8af7c;
+    max-width: 230px;
+    border-radius: 0px;
+    float: left;
+    position: relative;
+    left: 38%;
+    margin-top: 30px;
+}
+
+#kate_manu #mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item {
+    display: block;
+}
+
+#kate_manu #mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item a {
+    font-size: 16px;
+}
+
+#kate_manu {
+    padding-left: 79px;
+    border-top: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+#mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item>a.mega-menu-link {
+    height: 32px;
+    text-transform: uppercase;
+}
+
+#polecane {
+    border: 1px solid #d5d5d5;
+    width: 97%;
+    position: relative;
+}
+
+#tytul_polecane {
+    position: absolute;
+    bottom: 32px;
+    color: #fff;
+    left: 42px;
+    font-size: 18px;
+}
+
+#polecane span {
+    border-bottom: 1px solid #d5d5d5;
+    width: 100%;
+    display: block;
+    padding: 22px;
+    color: #d5d5d5;
+}
+
+h2 a:hover {
+    color: #f8af7c;
+    transition: 0.3s;
+}
+
+#text-2 {
+    border: 1px solid #d5d5d5;
+    padding: 18px;
+    margin-top: 0px;
+}
+
+.full {
+    width: 96.7% !important;
+}
+
+.widget-title {
+    font-size: 20px;
+    color: #a6a6a6;
+    padding-bottom: 12px;
+    padding-top: 18px;
+}
+
+#fbw_id-2 {
+    padding: 18px;
+    margin-top: 0px;
+}
+
+.fb_iframe_widget iframe {
+    left: 1px;
+}
+
+#dowiedzsie {
+    background: #f8af7c;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 5px;
+    max-width: 160px;
+    margin: auto;
+    font-size: 13px;
+}
+
+.blad {
+    text-align: center;
+    font-size: 130px;
+    color: #f8af7c;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.page-content button {
+    border: 0px;
+    background: #fff;
+    border: 1px solid;
+    border-radius: 0px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    max-width: 400px;
+    width: 100%;
+    font-size: 19px;
+    cursor: pointer;
+    margin-top: 48px;
+    margin-bottom: 11px;
+}
+
+.error-404 {
+    margin-top: 60px;
+}
+
+.wybierze_kat {
+    font-size: 17px;
+    margin-top: 36px;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.najnowsze404 {
+    width: 25%;
+    float: left;
+    padding: 9px;
+}
+
+.najnowsze404 #thumb_sidebar_wpis {
+    margin-left: 0px;
+}
+
+.naglowek_sidebar_wpis_404 {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 12px;
+    margin-top: 60px;
+}
+
+.page-title-search {
+    text-align: center;
+    margin-top: 60px;
+    color: #f8af7c;
+}
+
+#wyszukaj {
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.sprobuj {
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+    width: 12%;
+}
+
+.search-form {
+    margin: auto;
+    text-align: center;
+    width: 25%;
+    display: inline-block;
+}
+
+.search-submit {
+    border: 0px !important;
+    border-radius: 0px !important;
+    padding: 10px !important;
+    position: relative;
+    top: -2px;
+    background: #f8af7c !important;
+}
+
+.polityka {
+    border: 0px;
+    background: rgba(255, 255, 255, 0);
+    font-family: 'Lato';
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    position: relative;
+    left: -13px;
+    cursor: pointer;
+}
+
+.restauracja {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+#wpgmza_filter_2 {
+    margin-bottom: 24px !important;
+    text-align: right !important;
+}
+
+#wpgmza_filter_select {
+    margin-left: 15px;
+}
+
+.wpgmza-modern-marker-open-button {
+    top: 54px !important;
+}
+
+.wpgmza-modern-marker-open-button::after {
+    content: 'Pokaż listę restauracji';
+    display: block;
+}
+
+.wpgmza-modern-marker-listing .wpgmza-close-container {
+    background: #f8af7c !important;
+}
+
+.wpgmza-modern-marker-listing-marker-view [data-name="title"] {
+    background: #f8af7c !important;
+    padding-top: 30px !important;
+}
+
+.restauracja h2 {
+    text-align: center;
+    margin: auto;
+    margin-top: auto;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.btn.focus,
+.btn:focus {
+    box-shadow: 0px 0 0 -0.8rem rgba(0, 123, 255, .25) !important;
+}
+
+#post-42 .entry-header .entry-title {
+    display: none;
+}
+
+.entry-title {
+    margin-top: 65px;
+}
+
+.title_archive:hover {
+    color: #f8af7c;
+}
+
+.cat_title {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-top: 24px;
+    margin-bottom: 50px;
+}
+
+.col-sm-4 {
+    padding: 0px;
+    padding-right: 0px;
+    padding-right: 15px;
+}
+
+.obserwuj_tyt {
+    text-align: center;
+    margin: auto;
+}
+
+#mega-menu-item-14985 {
+    display: none !important;
+}
+
+#reply-title {
+    position: relative;
+    top: 44px;
+}
+
+#commentform {
+    margin-top: 67px;
+}
+
+#submit {
+    background: #f8af7c;
+    font-size: 15px;
+    border: 0px;
+    padding: 11px;
+    cursor: pointer;
+}
+
+.comment-meta {
+    margin-top: 60px;
+}
+
+.comments-title {
+    position: relative;
+    top: 26px;
+}
+
+.comment-body {
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.reply {
+    padding-bottom: 28px;
+}
+
+.comment-form-url {
+    display: none !important;
+}
+
+@media (max-width: 1300px) {
+    #wpgmza_filter_2 {
+        text-align: center !important;
+        margin-top: 25px;
+        margin-bottom: 30px !important;
+    }
+    #left {
+        width: 81%;
+        padding-left: 40px;
+    }
+    #mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item>a.mega-menu-link {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+    .max {
+        max-width: 735px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .max {
+        max-width: 100%;
+        margin-bottom: 28px;
+    }
+    #kolumna {
+        width: 50%;
+        margin: auto;
+        margin-top: 15px;
+    }
+    #sidebar_glowna {
+        width: 100%;
+    }
+    #polecane {
+        width: 100%;
+    }
+    .full {
+        width: 100% !important;
+    }
+    .sprobuj {
+        margin: auto;
+        margin-bottom: auto;
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin-bottom: 17px;
+    }
+    .search-form {
+        width: 100%;
+    }
+    #mega-menu-wrap-menu-1 #mega-menu-menu-1>li.mega-menu-item>a.mega-menu-link {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 992px) {
+    #post-94,
+    #post-10009 {
+        padding: 30px;
+    }
+    #left {
+        width: 78%;
+    }
+    #right {
+        width: 22%;
+    }
+    .main-navigation {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #partner {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        flex-wrap: wrap;
+    }
+    #thumb_sidebar_wpis {
+        margin-left: 0px;
+    }
+    .single-post .site .site-content .container .row #sidebar_glowna .widget-area {
+        padding-left: 0px;
+    }
+    #podtytul {
+        display: block;
+        margin: auto;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    .max {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .podtytul_wpis {
+        padding-right: 0px;
+    }
+    .podtytul_social {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .tytul_wpis {
+        font-size: 32px;
+    }
+    p {
+        text-align: justify;
+    }
+    #thumb {
+        background-size: cover!important;
+    }
+    #left {
+        width: 61%;
+        justify-content: center;
+        margin: auto;
+    }
+    #right {
+        width: 100%;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    #email {
+        margin-right: 0px;
+        float: left;
+        width: 18px;
+        position: relative;
+        right: 76px;
+    }
+    #fb {
+        margin-right: 0px;
+        float: left;
+        width: 8px;
+        position: relative;
+        left: -25px;
+    }
+    #insta {
+        float: left;
+        width: 17px;
+        position: relative;
+        right: -31px;
+    }
+    #social_menu #left {
+        justify-content: left;
+    }
+    #social_menu #right {
+        width: 28%;
+        justify-content: right;
+        margin-top: 4px;
+    }
+    #social_menu #left #email {
+        right: 0px;
+    }
+    #social_menu #left #fb {
+        left: 0px;
+        margin-right: 19px;
+    }
+    #social_menu #left #insta {
+        right: 0px;
+    }
+    #loadmore {
+        float: none;
+        left: 0%;
+        display: flex;
+        justify-content: center;
+        top: 14px;
+    }
+    .najnowsze404 {
+        width: 100%;
+        float: none;
+        padding: 9px;
+        margin: auto;
+        text-align: center;
+        display: block;
+    }
+    .najnowsze404 #thumb_sidebar_wpis {
+        margin-left: 0px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    #kolumna {
+        width: 100%;
+        margin: auto;
+        margin-top: 12px;
+    }
+    #footer-menu>li {
+        display: block;
+        border-right: 0px solid;
+    }
+    #footer-menu {
+        padding: inherit;
+        margin: auto;
+        margin-bottom: auto;
+        margin-bottom: 35px;
+    }
+    .otoczka_partnerzy {
+        display: block;
+        width: 100%;
+    }
+    .logo_partner {
+        float: none;
+        margin: auto;
+    }
+    .logo_partner2 {
+        float: none;
+        margin: auto;
+    }
+    .logo_partner3 {
+        float: none;
+        margin: auto;
+    }
+    .logo_partner4 {
+        float: none;
+        margin: auto;
+        margin-top: 43px;
+    }
+    .logo_partner5 {
+        float: none;
+        margin: auto;
+    }
+    .logo_partner6 {
+        float: none;
+        margin: auto;
+    }
+}
