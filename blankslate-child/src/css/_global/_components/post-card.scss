@@ -3,6 +3,8 @@
     position: relative;
     // width: 31.5%;
 
+    display: inline-flex;
+    
 
     &:first-child {
       grid-area: 1 / 1 / 2 / 3;
@@ -18,61 +20,72 @@
         a {
             display: block;
         }
+
+        a.img-container {
+          height: 50%;;
+        }
     }
     
     img {
-      height: auto;
-      aspect-ratio: 1/1;
+      height: 100%;
+      aspect-ratio: 1/1; 
       object-fit: cover;
       width: 100%;
       display: block;
     }
 
-    .entry-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      font-family: $main_font_family;
-      margin: 10px 0;
+    .post-short-content {
+      height: 50%;
 
-      a {
-        color: $description_color;
-        text-decoration: none;
+      .entry-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: $main_font_family;
+        margin: 10px 0;
+  
+        a {
+          color: $description_color;
+          text-decoration: none;
+        }
       }
+  
+      .description {
+        p {
+          font-size: $lead_font_size;
+          line-height: normal;
+          font-family: $second_font_family;
+        }
+  
+        a {
+          color: $description_color;
+        }
+      }
+  
+      .blog-post-categories {
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0px 10px;
+        flex-wrap: wrap;
+        a {
+          display: inline-block;
+          font-family: $second_font_family;
+          background: #21283E;
+          color: white;
+          padding: 8px 12px 8px 12px;
+          font-size: 0.85rem;
+          font-weight: 400;
+          text-decoration: none;
+          text-transform: capitalize;
+          letter-spacing: 2px;
+        }
+      }
+
     }
 
-    .description {
-      p {
-        font-size: $lead_font_size;
-        line-height: normal;
-        font-family: $second_font_family;
-      }
-
-      a {
-        color: $description_color;
-      }
-    }
-
-    .blog-post-categories {
-      display: flex;
-      gap: 10px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 0px 10px;
-      flex-wrap: wrap;
-      a {
-        display: inline-block;
-        font-family: $second_font_family;
-        background: #21283E;
-        color: white;
-        padding: 8px 12px 8px 12px;
-        font-size: 0.85rem;
-        font-weight: 400;
-        text-decoration: none;
-        text-transform: capitalize;
-        letter-spacing: 2px;
-      }
-    }
+   
   }
 }
 
@@ -83,3 +96,4 @@
     gap: 40px;
   }
 }
+
