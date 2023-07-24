@@ -1081,7 +1081,6 @@ header .navigation__overlay {
 .posts-container article {
   position: relative;
   display: inline-flex;
-  margin-right: 1%;
 }
 .posts-container article:first-child {
   grid-area: 1/1/2/3;
@@ -1095,32 +1094,38 @@ header .navigation__overlay {
 .posts-container article .entry-summary a {
   display: block;
 }
+.posts-container article .entry-summary a.img-container {
+  height: 50%;
+}
 .posts-container article img {
-  height: auto;
+  height: 100%;
   aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
 }
-.posts-container article .entry-title {
+.posts-container article .post-short-content {
+  height: 50%;
+}
+.posts-container article .post-short-content .entry-title {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: "futura-pt", sans-serif;
   margin: 10px 0;
 }
-.posts-container article .entry-title a {
+.posts-container article .post-short-content .entry-title a {
   color: #2D1C40;
   text-decoration: none;
 }
-.posts-container article .description p {
+.posts-container article .post-short-content .description p {
   font-size: 0.875rem;
   line-height: normal;
   font-family: "Space Grotesk", sans-serif;
 }
-.posts-container article .description a {
+.posts-container article .post-short-content .description a {
   color: #2D1C40;
 }
-.posts-container article .blog-post-categories {
+.posts-container article .post-short-content .blog-post-categories {
   display: flex;
   gap: 10px;
   position: absolute;
@@ -1129,7 +1134,7 @@ header .navigation__overlay {
   padding: 0px 10px;
   flex-wrap: wrap;
 }
-.posts-container article .blog-post-categories a {
+.posts-container article .post-short-content .blog-post-categories a {
   display: inline-block;
   font-family: "Space Grotesk", sans-serif;
   background: #21283E;

@@ -12,8 +12,9 @@
 
     <div class="entry-summary">
         <?php if ((has_post_thumbnail()) && (!is_search())) : ?>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
+            <a class="img-container" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
         <?php endif; ?>
+        <div class="post-short-content">
         <?php if (is_singular() && !is_front_page() && !is_page_template('custom-template-numerologia.php') && !is_page_template('custom-template-sidebar.php')) {
             echo '<h1 class="entry-title" itemprop="headline">';
         } else {
@@ -35,7 +36,7 @@
             }
             ?>
         </div>
-        <div class="description" itemprop="description"><?php the_excerpt(); ?></div>
+        <div class="description" itemprop="description"><?php the_excerpt(); ?></div></div>
         <?php if (is_search()) { ?>
             <div class="entry-links"><?php wp_link_pages(); ?></div>
         <?php } ?>
