@@ -1,0 +1,18 @@
+.latests-posts-title {
+  margin-bottom: 24px;
+  font-family: $main_font_family;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+}
+
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 50px;
+
+//   display: flex;
+//   flex-wrap: wrap;
+//   row-gap: 50px;
+}

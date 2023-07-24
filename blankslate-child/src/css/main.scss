@@ -1,4 +1,34 @@
-body {
-    background-color: red;
-    padding: 100px;
-}
+ /* VARIABLES
+ * ------------------------------------------------------------------------- */
+
+ @import "_variables";
+
+
+ /* VENDORS
+  * ------------------------------------------------------------------------- */
+ 
+ @import "_vendor/reset";
+ @import "_vendor/normalize";
+
+ /* FONTS 
+ * ------------------------------------------------------------------------- */
+ 
+ @import "_global/_webfonts"; 
+ 
+ /* ELEMENTS
+ * ------------------------------------------------------------------------- */
+
+
+@import "_global/_components/header";
+@import "_global/_components/mega-menu.scss";
+@import "_global/_components/home-blog-posts.scss";
+@import "_global/_components/post-card.scss";
+
+ /* SEARCH
+ * ------------------------------------------------------------------------- */
+
+
+ @import "_global/_components/search";
+
+
+

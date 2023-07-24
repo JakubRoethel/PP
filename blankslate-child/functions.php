@@ -25,6 +25,43 @@ add_action('wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10);
 
 // END ENQUEUE PARENT ACTION
 
+if ( ! function_exists( 'pomorskie_prestige_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
+	function pomorskie_prestige_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on pomorskie_prestige, use a find and replace
+		 * to change 'pomorskie_prestige' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'pomorskie_prestige', get_template_directory() . '/languages' );
+
+		
+
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
+
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'menu-1' => esc_html__( 'Primary', 'pomorskie_prestige' ),
+			'menu-2' => esc_html__( 'Footer', 'pomorskie_prestige' ),
+		) );
+
+		
+	}
+endif;
+add_action( 'after_setup_theme', 'pomorskie_prestige_setup' );
+
 
 
 function studio_scripts()
@@ -150,8 +187,3 @@ function custom_ajax_spinner() {
 
 //     return $args;
 // }
-
-
-
-
-

@@ -1,0 +1,238 @@
+@keyframes fadeOutBottom {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(50px); /* Adjust the distance as needed */
+    }
+  }
+  
+  @keyframes fadeInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px); /* Adjust the distance as needed */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInTop {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Adjust the distance as needed */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+  
+  
+  
+  
+  
+  
+  
+  .search-submit {
+    display: none;
+  }
+  .search-toggle {
+    cursor: pointer;
+  }
+  
+  .search-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    transform: translateY(-50px); /* Adjust the distance as needed */
+    opacity: 0;
+  
+    .close-search-icon {
+      cursor: pointer;
+    }
+  }
+  
+  .menu-down {
+    .search-input-container {
+      animation-name: fadeInBottom;
+      animation-duration: 0.8s; /* Adjust the duration as needed */
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+  
+    .header_navigation {
+      animation-name: fadeOutBottom;
+      animation-duration: 0.8s; /* Adjust the duration as needed */
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+  
+    .icon_wrapper {
+      animation-name: fadeOutBottom;
+      animation-duration: 0.8s; /* Adjust the duration as needed */
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+  }
+  
+  .fade-out-bottom {
+    animation-name: fadeOutBottom;
+    animation-duration: 0.8s; /* Adjust the duration as needed */
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+  
+  .fade-in-bottom {
+    animation-name: fadeInBottom;
+    animation-duration: 1s; /* Adjust the duration as needed */
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+  
+  
+  .menu-up {
+      .search-input-container {
+        animation-name: fadeOutBottom;
+        animation-duration: 0.8s; /* Adjust the duration as needed */
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+      }
+    
+      .header_navigation {
+        animation-name: fadeInBottom;
+        animation-duration: 0.8s; /* Adjust the duration as needed */
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+      }
+    
+      .icon_wrapper {
+        animation-name: fadeInBottom;
+        animation-duration: 0.8s; /* Adjust the duration as needed */
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+      }
+    }
+    
+    .fade-out-bottom {
+      animation-name: fadeOutBottom;
+      animation-duration: 0.8s; /* Adjust the duration as needed */
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+    
+    .fade-in-bottom {
+      animation-name: fadeInBottom;
+      animation-duration: 1s; /* Adjust the duration as needed */
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+  
+  
+  
+  
+    //search results
+    .search-section {
+      margin-top: 80px;
+      padding: 0 200px;
+  
+      @include bp($bp-mobile) {
+        padding: 20px 16px 0px 16px;
+        margin-top: 30px;
+      }
+  
+      @include bp($bp-tablet) {
+        padding: 20px 50px;
+        margin-top: 30px;
+      }
+  
+      h1.entry-title {
+          margin-bottom: 60px;
+      }
+  
+      .results-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+  
+          @include bp($bp-mobile) {
+              grid-template-columns: 1fr;
+              gap: 20px;
+            }
+  
+          article {
+             
+              background: #F8DED6;
+              padding: 20px;
+              border-radius: 16px;
+  
+              h2.entry-title {
+                  font-size: 2rem;
+                  line-height: 2.4rem;
+              
+                  a {
+                      text-decoration: unset;
+  
+                  }
+              }
+  
+              .blog-post-categories {
+                  display: flex;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                  margin: 10px 0;
+                  a {
+                      display: inline-block;
+                      font-family: $second_font_family;
+                      background: #264799;
+                      color: white;
+                      padding: 3px 8px 5px 8px;
+                      font-size: 12px;
+                      font-weight: bold;
+                      text-decoration: none;
+                      border-radius: 4px;
+                  }
+              }
+          }
+      }
+  
+      
+  
+      .pagination {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 50px;
+    
+          span, a {
+            background: transparent;
+            padding-top: 5px;
+            font-weight: bold;
+            color: #463f67;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #463f67;
+            border-radius: 52px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+    
+            &.current {
+              background: #463f67 !important;
+              color: white;
+            }
+    
+             &:hover {
+                    background: #433c6260;
+                 
+                }
+          }
+        }
+    }
+  

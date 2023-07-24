@@ -1,0 +1,101 @@
+$color_black                      : #000;
+$color_white                      : #fff; 
+
+$heading_color                    : #4C4766;
+$text_color                       : #4C4766;
+$description_color                : #2D1C40;
+$button_color                     : #D45F3B;
+$button_text_color                : #FFFFFF;
+$links_color                      : #463F67;
+$filters_bg                       : #EFD4CB;
+$main_bg                          : #ffefea;
+$cart_bg_one                      : #F8DED6;
+$cart_bg_two                      : #F6DCD4;
+$cart_gradient                    : linear-gradient(180deg, #F8DED6 0%, #CE9CAE 100%);
+$footer_color                     : #E7C296;
+$footer_links                     : #FFFFFF;
+$nav_color                        :#F9DCD3;
+
+$border_radius                    :16px;
+
+
+
+
+$main_font_family                 : 'futura-pt', sans-serif;
+$second_font_family               : 'Space Grotesk', sans-serif;
+
+
+$letter_spacing_base              : 0;
+
+$font_size_base                   : 0.875rem;
+$line_height_base                 : 35/17;
+$line_height_computed             : $font_size_base * $line_height_base;
+$line_height_default              : 21/18; // mimics photoshop "auto" setting
+
+// $background                       : $color_dark;
+// $color                            : $color_white;
+// $link_color                       : inherit;
+// $link_color_hover                 : $color_brand;
+// $selection_bg                     : $color_brand;
+// $selection_text                   : $color_white;
+$color_error                      : darken(red, 10%);
+
+$h1_font_size                     : 3.5rem;
+$h2_font_size                     : 2.5rem;
+$h3_font_size                     : 2rem;
+$h4_font_size                     : 1.5rem;
+$lead_font_size                   : 0.875rem;
+$description_big                  : 1.125rem;
+$base_font                        : 1rem;
+
+$wrapper_width                    : 128rem;
+$grid_columns                     : 12;
+$grid_gutter                      : 2.4rem;
+$margin_base                      : 6rem;
+
+//burger
+$burger_height                    : 20px;
+$burger_width                     : 22px;
+$burger_line_width                : 3px;
+
+// Dropkick
+$dk_border_width                  : 1px;
+
+
+// z-index
+$z_index_over_all                 : 10000;
+$z_index_modal                    : 9000;
+$z_index_overlay                  : 8000;
+$z_index_dropdown                 : 7000;
+$z_index_header                   : 6000;
+$z_index_footer                   : 5000;
+$z_index_over_content             : 1000;
+$z_index_over_base                : 10;
+$z_index_content                  : 5;
+$z_index_base                     : 1;
+$z_index_under_base               : -10;
+
+$transition_default               : all 300ms ease;
+$transition_slow                  : all 800ms ease;
+$transition_fast                  : all 100ms ease;
+
+
+// RWD
+
+$bp-super-narrow                  : ( max:  419px );
+$bp-mobile-narrow                 : ( max:  479px );
+$bp-mobile                        : ( max:  519px );
+
+$bp-phablet                       : ( max:  767px );
+$bp-portrait                      : ( max:  1023px );
+$bp-tablet                        : ( min: map-get($bp-mobile, max) + 1, max:  1199px );
+$bp-desktop                       : ( max: 1359px );
+$bp-min-desktop                   : ( min: 1200px );
+$bp-hd                            : ( min: map-get($bp-desktop, max) + 1 );
+
+$bp-mobile                        : $bp-mobile;
+$bp-phablet-only                  : ( min: map-get($bp-mobile, max) + 1, max: map-get($bp-phablet, max) );
+$bp-portrait-only                 : ( min: map-get($bp-phablet, max) + 1, max: map-get($bp-portrait, max) );
+$bp-tablet-only                   : ( min: map-get($bp-portrait, max) + 1, max: map-get($bp-tablet, max) );
+$bp-desktop-only                  : ( min: map-get($bp-tablet, max) + 1, max: map-get($bp-desktop, max) );
+$bp-hd-only                       : $bp-hd;
