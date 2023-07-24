@@ -2,9 +2,7 @@
   article {
     position: relative;
     // width: 31.5%;
-    display: inline-flex;
-    margin-right: 1%;
-    
+
 
     &:first-child {
       grid-area: 1 / 1 / 2 / 3;
@@ -27,6 +25,7 @@
       aspect-ratio: 1/1;
       object-fit: cover;
       width: 100%;
+      display: block;
     }
 
     .entry-title {

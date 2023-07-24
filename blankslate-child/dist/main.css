@@ -1080,8 +1080,6 @@ header .navigation__overlay {
 
 .posts-container article {
   position: relative;
-  display: inline-flex;
-  margin-right: 1%;
 }
 .posts-container article:first-child {
   grid-area: 1/1/2/3;
@@ -1101,6 +1099,7 @@ header .navigation__overlay {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+  display: block;
 }
 .posts-container article .entry-title {
   font-size: 1.5rem;
