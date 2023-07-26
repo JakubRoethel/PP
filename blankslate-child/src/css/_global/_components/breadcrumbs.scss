@@ -1,0 +1,12 @@
+.breadcrumb {
+  color: #fff;
+  font-family: $second_font_family;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 120%; /* 14.4px */
+  z-index: 1;
+
+  a {
+    color: #fff;
+  }
+}

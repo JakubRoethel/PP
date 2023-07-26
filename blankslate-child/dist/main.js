@@ -10,9 +10,119 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mega_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mega-menu */ "./src/js/modules/mega-menu.js");
+/* harmony import */ var _modules_mega_menu_mobile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mega-menu-mobile */ "./src/js/modules/mega-menu-mobile.js");
+
 
 (0,_modules_mega_menu__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_modules_mega_menu_mobile__WEBPACK_IMPORTED_MODULE_1__["default"])();
 console.log("test");
+
+/***/ }),
+
+/***/ "./src/js/modules/mega-menu-mobile.js":
+/*!********************************************!*\
+  !*** ./src/js/modules/mega-menu-mobile.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ megaMenuMobileService)
+/* harmony export */ });
+function megaMenuMobileService() {
+  jQuery(function ($) {
+    $(document).ready(function () {
+      // append plus symbol to every list item that has children
+      // $('#mobile-nav .menu-item-has-children').append('<span class="material-symbols-outlined open-menu">expand_more</span>');
+
+      // fix non-scrolling overflow issue on mobile devices
+      $("#mobile-nav > ul").wrap('<div class="overflow"></div>');
+      $(window).on("load resize", function () {
+        var vph = $(window).height() - 57; // 57px - height of #mobile-nav
+        $(".overflow").css("max-height", vph);
+      });
+
+      // global variables
+      var menu = $(".overflow > ul");
+      var bg = $("html, body");
+
+      // toggle background scrolling
+      function bgScrolling() {
+        // if menu has toggled class... *
+        if (menu.hasClass("open")) {
+          // * disable background scrolling
+          bg.css({
+            "overflow-y": "hidden",
+            height: "auto"
+          });
+          // if menu does not have toggled class... *
+        } else {
+          // * enable background scrolling
+          bg.css({
+            "overflow-y": "visible",
+            height: "100%"
+          });
+        }
+      }
+
+      // list item click events
+      $(".open-menu").on("click", function (e) {
+        e.preventDefault();
+        console.log("Open menu");
+        $(this).closest(".menu-item-wrapper").next(".sub-menu").slideToggle(250);
+        console.log($(this).find("ul.sub-menu"));
+        $(this).toggleClass("rotate");
+      });
+    });
+  });
+  var header = document.querySelector(".header");
+  var headerOverlay = document.querySelectorAll(".navigation__overlay");
+  var minicart = document.querySelector(".mini-cart-container");
+  var doc = document.documentElement;
+  console.log(headerOverlay);
+  // window.addEventListener('scroll', () => {
+  //   const top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+
+  //   if (top > 20) {
+  //     header.classList.add('header--scrolled');
+  //   } else {
+  //     header.classList.remove('header--scrolled');
+  //   }
+  // });
+
+  var burger = document.querySelector(".header__toggle");
+  burger.addEventListener("click", function () {
+    if (header.classList.contains("header--navigation-open")) {
+      header.classList.remove("header--navigation-open");
+      document.documentElement.classList.remove("noscroll");
+    } else {
+      header.classList.add("header--navigation-open");
+      console.log(document.documentElement);
+      document.documentElement.classList.add("noscroll");
+    }
+  });
+
+  // Function to handle the click event
+  var handleClick = function handleClick() {
+    header.classList.remove("header--navigation-open");
+    minicart.classList.remove("minicart-show");
+    document.documentElement.classList.remove("noscroll");
+    console.log("Click");
+  };
+
+  //handle close icon on menu mobile click
+  var close_menu = document.querySelector(".menu-header .close-icon");
+  close_menu.addEventListener("click", function () {
+    console.log("dwqdqqwdw");
+    header.classList.remove("header--navigation-open");
+    document.documentElement.classList.remove("noscroll");
+  });
+
+  // Loop through each header overlay and attach the event listener
+  headerOverlay.forEach(function (overlay) {
+    overlay.addEventListener("click", handleClick);
+  });
+}
 
 /***/ }),
 

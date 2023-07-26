@@ -78,7 +78,7 @@
         <div class="navigation__overlay"></div>
         <div id="mobile-nav" class="header_navigation_mobile">
             <?php wp_nav_menu([
-               
+                'menu' => 'Top menu',
                 'menu_id' => 'navigation-list',
                 'menu_class' => 'navigation__list open',
                 'container' => 'nav',
@@ -113,12 +113,7 @@
             </ul>
             <!-- <p class="translation_dropdown">English</p> -->
         </div>
-        <?php
-							wp_nav_menu(array(
-								'theme_location' => 'menu-1', 
-								'menu_id'        => 'primary-menu',
-							));
-							?>
+       
     </div>
 
 </header>

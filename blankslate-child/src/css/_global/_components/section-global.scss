@@ -1,0 +1,14 @@
+
+//section style full RWD
+
+.section {
+    padding: 60px 220px;
+
+    @include bp($bp-mobile) {
+        padding: 50px 16px 50px 16px;
+      }
+
+      @include bp($bp-tablet) {
+        padding: 50px 32px;
+    }
+}

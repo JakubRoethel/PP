@@ -17,12 +17,13 @@
  
  /* ELEMENTS
  * ------------------------------------------------------------------------- */
-
-
 @import "_global/_components/header";
 @import "_global/_components/mega-menu.scss";
-@import "_global/_components/home-blog-posts.scss";
+@import "_global/_components/blog-posts.scss";
 @import "_global/_components/post-card.scss";
+@import "_global/_components/section-global.scss";
+@import "_global/_components/breadcrumbs.scss";
+@import "_global/_components/pagination.scss";
 
  /* SEARCH
  * ------------------------------------------------------------------------- */

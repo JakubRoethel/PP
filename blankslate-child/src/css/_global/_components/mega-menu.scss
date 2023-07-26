@@ -29,6 +29,7 @@
       display: flex;
       list-style: none;
       color: $links_color;
+      font-family: $second_font_family;
       font-weight: 700;
       font-size: 13px;
       padding: 40px 5px;
@@ -103,7 +104,7 @@
     height: 90%;
     transform-origin: 0%;
     transform: translateX(0%) rotate3d(1, 0, 0, -15deg);
-    background-color: $main_bg;
+    background-color: white;
     perspective: 100px;
     transition: width 250ms ease, height 250ms ease, opacity 150ms ease, transform 200ms ease-in;
     overflow: hidden;

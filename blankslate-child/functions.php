@@ -158,32 +158,56 @@ function custom_ajax_spinner() {
 }
 
 
-// De-queues Select2 styles & scripts ONLY in the Woocommerce Checkout.
-// Useful to keep Boostrap form control formatting
+function my_excerpt_length($length)
+{
+    return 15;
+}
+add_filter('excerpt_length', 'my_excerpt_length');
 
-/**
- * Remove Woocommerce Select2 only for Checkout - Woocommerce 3.2.1+
- */
-// function woo_dequeue_select2_only_for_checkout() {
 
-// 	if ( is_checkout() || is_cart() || is_account_page()) {
-// 	    if ( class_exists( 'woocommerce' ) ) {
-// 	        wp_dequeue_style( 'select2' );
-// 	        wp_deregister_style( 'select2' );
 
-// 	        wp_dequeue_script( 'selectWoo');
-// 	        wp_deregister_script('selectWoo');
-// 	    } 
-// 	}
-// }
-// add_action( 'wp_enqueue_scripts', 'woo_dequeue_select2_only_for_checkout', 100 );
 
-// // Add filter to modify the related products arguments on single product page
-// add_filter('woocommerce_output_related_products_args', 'customize_related_products_args');
+function get_breadcrumb() {
+    // Initialize an empty array to store breadcrumb items
+    $breadcrumb = array();
 
-// function customize_related_products_args($args) {
-//     // Modify the 'posts_per_page' argument to limit the number of related products
-//     $args['posts_per_page'] = 2;
+    // Add the home link to the breadcrumb
+    $breadcrumb[] = '<a href="' . esc_url( home_url() ) . '">' . esc_html__( 'Home', 'textdomain' ) . '</a>';
 
-//     return $args;
-// }
+    // Check if we are on a single post (e.g., single post, page, custom post type)
+    if ( is_singular() ) {
+        $post_type = get_post_type();
+
+        // Get the post type object to retrieve its labels
+        $post_type_object = get_post_type_object( $post_type );
+
+        // Add the post type archive link to the breadcrumb
+        if ( $post_type_object->has_archive ) {
+            $breadcrumb[] = '<a href="' . esc_url( get_post_type_archive_link( $post_type ) ) . '">' . esc_html( $post_type_object->label ) . '</a>';
+        }
+
+        // Add the current post title to the breadcrumb
+        $breadcrumb[] = get_the_title();
+    }
+
+    // Check if we are on a category or tag archive page
+    elseif ( is_category() || is_tag() ) {
+        $term = get_queried_object();
+        $breadcrumb[] = $term->name;
+    }
+
+    // Check if we are on an archive page (e.g., date, author, custom taxonomy)
+    elseif ( is_archive() ) {
+        $breadcrumb[] = post_type_archive_title( '', false );
+    }
+
+    // Check if we are on a search results page
+    elseif ( is_search() ) {
+        $breadcrumb[] = esc_html__( 'Search Results', 'textdomain' );
+    }
+
+    // Add more conditions and custom logic based on your website's structure
+
+    // Return the breadcrumb trail as a string
+    return implode( ' / ', $breadcrumb );
+}

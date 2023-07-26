@@ -43,8 +43,7 @@ if ($linki[1] == 'en') {
         }
 
         if (!$hasChildren) {
-          echo '<li class="nav--link"><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li><span class="material-symbols-outlined">
-          expand_more </span>';
+          echo '<li class="nav--link"><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li>';
         } else {
           echo '<li class="nav--link" data-expand="' . $menuItemSlug . '"><a href="' . $menuItem->url . '">' . $menuItem->title . '</a></li><span class="material-symbols-outlined">
           expand_more</span>';
@@ -86,5 +85,6 @@ if ($linki[1] == 'en') {
     echo '</div>';
 
     echo '</div>';
+    
   }
   ?>
