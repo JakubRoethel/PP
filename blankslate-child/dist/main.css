@@ -1232,6 +1232,19 @@ header.category-info .archive-meta {
     grid-area: unset;
   }
 }
+.posts-container article:nth-child(7) .post-short-content {
+  margin-top: -20px;
+}
+@media screen and (max-width: 519px) {
+  .posts-container article:nth-child(7) .post-short-content {
+    margin-top: 0px;
+  }
+}
+@media screen and (min-width: 520px) and (max-width: 1199px) {
+  .posts-container article:nth-child(7) .post-short-content {
+    margin-top: 0px;
+  }
+}
 .posts-container article:nth-child(7) img {
   aspect-ratio: 2/1;
   height: calc(100% - 20px);
@@ -1279,7 +1292,7 @@ header.category-info .archive-meta {
   color: #2D1C40;
   text-decoration: none;
 }
-.posts-container article .post-short-content .description p {
+.posts-container article .post-short-content .description {
   font-size: 0.875rem;
   line-height: normal;
   font-family: "Space Grotesk", sans-serif;
