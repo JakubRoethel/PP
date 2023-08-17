@@ -43,6 +43,7 @@ export default function megaMenuMobileService() {
             .next(".sub-menu")
             .slideToggle(250);
           console.log($(this).find("ul.sub-menu"));
+          console.log($(this).closest(".menu-item-wrapper").next(".sub-menu"));
           $(this).toggleClass("rotate");
         });
       });
@@ -67,6 +68,7 @@ export default function megaMenuMobileService() {
     const burger = document.querySelector(".header__toggle");
   
     burger.addEventListener("click", () => {
+        console.log("Toggle");
       if (header.classList.contains("header--navigation-open")) {
         header.classList.remove("header--navigation-open");
         document.documentElement.classList.remove("noscroll");

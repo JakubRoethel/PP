@@ -28,7 +28,10 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID());
 
                 </div>
             </div>
-            <p class="author"><?php echo pll__('Autor tekstu: ') ?><strong><? echo get_field('autor') ?></strong></p>
+            <?php if (get_field('autor') != '') { ?>
+                <p class="author"><?php echo pll__('Autor tekstu: ') ?><strong><? echo get_field('autor') ?></strong></p>
+            <?php } ?>
+
         </header>
         <div class="main_container section">
 
@@ -42,7 +45,7 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID());
                     <div class="post-content">
                         <?php the_content(); ?>
                     </div>
-                <?php custom_related_posts(); ?>
+                    <?php custom_related_posts(); ?>
                 <?php
                     // If comments are open or we have at least one comment, load up the comment template.
                     if (comments_open() || get_comments_number()) :

@@ -1,0 +1,43 @@
+{
+    "name": "acf/partner",
+    "title": "Partner",
+    "description": "A custom partner block.",
+    "style": [ "file:./partner.css" ],
+    "category": "formatting",
+    "icon": "admin-users",
+    "keywords": ["partner", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "partner.php"
+    },
+    "align": "full",
+    "supports": {
+        "align": true,
+        "dimensions": true,
+		"typography": true,
+        "anchor": true,
+        "alignContent": true,
+        "color": {
+            "text": true,
+            "background": true,
+            "link": true
+        },
+        "alignText": false,
+        "fullHeight": false,
+        "spacing": {
+            "margin": true,  
+            "padding": true, 
+            "blockGap": true
+        }
+    },
+    "attributes": {
+        "backgroundColor": {
+            "type": "string",
+            "default": "#ffffff"
+          },
+          "fontSize": {
+            "type": "number",
+            "default": 16
+          }
+    }
+}

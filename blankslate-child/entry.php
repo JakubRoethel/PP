@@ -38,7 +38,7 @@
             </div>
             <div class="description" itemprop="description">
                 <?php
-                $datatata = wp_trim_words(get_the_content(), 25, ' ... ');
+                $datatata = wp_trim_words(get_the_content(), 15, ' ... ');
                 $datatata = preg_replace("/<img[^>]+\>/i", "(image) ", $datatata);
                 if (!empty($datatata)) {
                     echo $datatata;

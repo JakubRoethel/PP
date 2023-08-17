@@ -1,0 +1,129 @@
+footer {
+  .footer_section {
+    margin: 0px 45px 0px 45px;
+    background: $primary_color;
+    padding: 110px 190px;
+
+    @include bp($bp-tablet) {
+      padding: 40px 60px;
+    }
+
+    @include bp($bp-mobile) {
+      padding: 32px 16px;
+      margin: 0;
+    }
+
+    .menu-social-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.645);
+
+      @include bp($bp-mobile) {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .menu-title,
+      .follow-title {
+        color: white;
+        text-transform: uppercase;
+        font-family: $main_font_family;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 18px;
+      }
+
+      .menu {
+        .menu-item {
+          a {
+            color: white;
+            text-decoration: none;
+            font-family: $second_font_family;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 24px;
+            opacity: 70%;
+
+            &:hover {
+              opacity: 100%;
+            }
+          }
+        }
+      }
+
+      .navigation_social {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+
+        @include bp($bp-mobile) {
+          justify-content: start;
+          gap: 16px;
+        }
+      }
+    }
+
+    .legal-menu-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      @include bp($bp-mobile) {
+        flex-direction: column-reverse;
+      }
+
+      .submenu-wrapper {
+        display: flex;
+        gap: 1rem;
+
+        @include bp($bp-mobile) {
+          flex-direction: column;
+        }
+
+        a {
+          color: white;
+          font-family: $second_font_family;
+          font-size: 1rem;
+          font-weight: 500;
+          opacity: 70%;
+          display: block;
+          margin: auto;
+          text-decoration: none;
+
+          &:hover {
+            opacity: 100%;
+          }
+
+          @include bp($bp-mobile) {
+            margin: 0;
+          }
+        }
+      }
+
+      .translation_dropdown {
+        color: white;
+
+        select {
+          border: 1px solid transparent !important;
+          color: white !important;
+          font-family: $second_font_family;
+          font-size: 1rem;
+          font-weight: 500;
+          opacity: 70%;
+          cursor: pointer;
+          outline: none;
+
+          @include bp($bp-mobile) {
+            padding-left: 0;
+            margin-left: -4px;
+            margin-bottom: 10px;
+          }
+
+          &:hover {
+            opacity: 100%;
+          }
+        }
+      }
+    }
+  }
+}

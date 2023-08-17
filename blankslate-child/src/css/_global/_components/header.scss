@@ -14,12 +14,19 @@
   }
 }
 
+.home .main_header {
+    border-bottom: solid 1px rgba(35, 35, 35, 0.1);
+    padding: 25px 0;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
 header {
   display: flex;
   flex-direction: column;
 
   .main_header {
-    border-bottom: solid 1px rgba(35, 35, 35, 0.1);
     padding: 25px 0;
 
     .social_container {
@@ -110,6 +117,8 @@ header {
         display: flex;
         padding: 0.563rem 0rem;
         flex: 4;
+        justify-content: space-between;
+        gap: 40px;
 
         .header_logo {
           display: flex;
@@ -117,21 +126,39 @@ header {
           align-items: center;
 
           img {
-              max-width: 220px;
+            max-width: 220px;
 
-              @include bp($bp-mobile) {
-                max-width: 200px;
-              }
+            @include bp($bp-mobile) {
+              max-width: 200px;
             }
+          }
+        }
+
+        .mega-menu-wrap {
+          ul.mega-sub-menu {
+            background: white !important;
+          }
+          .mega-menu-link {
+            font-size: 0.85rem !important;
+            font-family: $second_font_family !important;
+            font-weight: 500 !important;
+          }
         }
       }
 
       .right-side-nav {
-        flex: 1;
         display: flex;
         align-items: center;
         gap: 2.813rem;
         justify-content: end;
+        min-width: 220px;
+
+        @include bp($bp-mobile) {
+            min-width: unset;
+          }
+          @include bp($bp-tablet) {
+            min-width: unset;
+          }
 
         .header_navigation {
           @include bp($bp-mobile) {
@@ -151,7 +178,7 @@ header {
           a {
             padding-bottom: 9px;
             border-bottom: 2px solid transparent;
-            color: $links_color;
+            color: $primary_color;
             text-decoration: none;
             &:hover {
               border-bottom: 2px solid $links_color;
@@ -164,7 +191,7 @@ header {
           display: flex;
           gap: 13px;
           a {
-            color: $links_color;
+            color: $primary_color;
             text-decoration: none;
             display: flex;
 
@@ -250,7 +277,7 @@ header {
   }
 
   .header__toggle__item {
-    background: $links_color;
+    background: $primary_color;
     width: 30px;
     height: 2px;
     border-radius: 4px;
@@ -269,7 +296,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     width: 340px;
-   
+
     position: fixed;
     right: 0;
     top: 0;
@@ -312,6 +339,7 @@ header {
 
     .menu-item {
       border-bottom: 1px solid rgba(35, 35, 35, 0.1);
+      font-family: $second_font_family;
     }
 
     .navigation_list_footer .menu-item {
@@ -321,20 +349,35 @@ header {
 
     .mobile_menu_footer {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       padding: 15px 20px;
-      background: #f4d6cd;
-      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+      background: white;
 
       ul {
         display: flex;
         gap: 24px;
+        align-items: center;
 
         li {
           a {
             text-decoration: unset;
             font-weight: bold;
           }
+        }
+      }
+
+      .translation_dropdown {
+        select {
+          border: unset !important;
+          font-family: $second_font_family;
+          font-size: .85rem;
+          color: $primary_color;
+          font-weight: 500;
+          cursor: pointer;
+        }
+
+        select:focus {
+          outline: none;
         }
       }
     }
@@ -357,7 +400,7 @@ header {
     color: black;
     cursor: pointer;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 12px;
     transition: transform 250ms ease;
   }
 
@@ -404,15 +447,15 @@ header {
         }
 
         a {
-          color: $links_color;
+          color: $primary_color;
           display: inline-block;
           font-size: 12px;
-          padding: 1rem 0;
-          padding-top: 1.3rem;
+          padding: 12px 0;
           text-decoration: none;
           width: 100%;
-          text-transform: uppercase;
+          text-transform: capitalize;
           font-weight: bold;
+          margin: auto;
         }
       }
     }
@@ -509,4 +552,17 @@ header {
       display: none;
     }
   }
+}
+
+
+
+.header--scrolled {
+    // position: fixed;
+    // top: 0;
+    // z-index: 2;
+    
+    .main_header {
+        backdrop-filter: blur(6px);
+        background: rgba(255, 255, 255, 0.178);
+    }
 }

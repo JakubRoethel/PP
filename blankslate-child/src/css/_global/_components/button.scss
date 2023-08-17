@@ -1,0 +1,83 @@
+@-webkit-keyframes to-bottom-right {
+  100% {
+    left: 100%;
+    top: 100%;
+    margin-left: -100px;
+    margin-top: -50px;
+  }
+}
+@-ms-keyframes to-bottom-right {
+  100% {
+    left: 100%;
+    top: 100%;
+    margin-left: -100px;
+    margin-top: -50px;
+  }
+}
+@keyframes to-bottom-right {
+  100% {
+    left: 100%;
+    top: 100%;
+    margin-left: -100px;
+    margin-top: -50px;
+  }
+}
+
+/* Define the keyframes for the animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+
+/* Apply the animation to the element */
+.element {
+  animation: rotate 0.4s, moveRight 0.4s 0.4s forwards;
+}
+
+/* Define the keyframes for the second animation (translateX) */
+@keyframes moveRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: translateX(10px) rotate(-45deg);
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: end;
+  margin-top: 50px;
+}
+
+.custom-button {
+  font-family: $second_font_family;
+  background: $primary_color;
+  color: white;
+  padding: 15px 30px 11px 30px;
+  text-decoration: unset;
+  display: flex;
+
+  &:hover {
+    background: #0d1736;
+
+    &::after {
+      transform: rotate(-45deg);
+      transition: transform .5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+     
+    }
+  }
+
+  &::after {
+    content: url("/wp-content/themes/blankslate-child/assets/arrow_outward.svg");
+    transform: rotate(0);
+    transition: transform 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  }
+}

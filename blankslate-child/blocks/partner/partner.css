@@ -1,0 +1,43 @@
+.partner-block {
+    display: flex;
+    flex-direction: column;
+    background: #21283E;
+    align-items: center;
+    padding: 34px;
+    gap: 2rem;
+    position: sticky;
+    top: 40px;
+   
+}
+
+.partner-description {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Space Grotesk';
+    gap: 1rem;
+}
+
+.partner-description span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+}
+
+.partner-title {
+    font-family: "Futura-pt", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 36px */
+}
+
+.partner-logo {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.partner-logo img {
+    height: auto;
+}

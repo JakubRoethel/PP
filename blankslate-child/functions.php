@@ -63,6 +63,22 @@ add_action('after_setup_theme', 'pomorskie_prestige_setup');
 
 
 
+function register_acf_blocks() {
+    register_block_type( __DIR__ . '/blocks/testimonial/block.json' );
+    register_block_type( __DIR__ . '/blocks/partner/block.json' );
+}
+
+
+
+
+
+
+
+
+add_action( 'init', 'register_acf_blocks' );
+
+
+
 function studio_scripts()
 {
     wp_register_style('main', get_stylesheet_directory_uri() . '/dist/main.css', [], 1, 'all');
@@ -83,31 +99,32 @@ add_action('wp_enqueue_scripts', 'studio_scripts');
 
 
 add_theme_support('custom-logo');
-
+require_once('lib/acf-config.php');
+require_once('lib/partner-post-type.php');
 
 
 function add_extra_element_to_menu_item($item_output, $item, $depth, $args)
 {
-    // Check if it's the desired menu location
-    if ($args->theme_location === 'main-menu') {
-        // Check if the current item is a parent (has children)
-        $is_parent = in_array('menu-item-has-children', $item->classes);
 
-        // Add the wrapper element if it's a parent item
-        if ($is_parent) {
-            $wrapper_start = '<div class="menu-item-wrapper">';
-            $wrapper_end   = '</div>';
 
-            $item_output = $wrapper_start . $item_output . $wrapper_end;
-        }
+    // Check if the current item is a parent (has children)
+    $is_parent = in_array('menu-item-has-children', $item->classes);
 
-        // Add the extra element only for parent items
-        if ($is_parent) {
-            $extra_element = '<span class="material-symbols-outlined open-menu">expand_more</span>';
+    // Add the wrapper element if it's a parent item
+    if ($is_parent) {
+        $wrapper_start = '<div class="menu-item-wrapper">';
+        $wrapper_end   = '</div>';
 
-            $item_output = str_replace('</a>', '</a>' . $extra_element, $item_output);
-        }
+        $item_output = $wrapper_start . $item_output . $wrapper_end;
     }
+
+    // Add the extra element only for parent items
+    if ($is_parent) {
+        $extra_element = '<span class="material-symbols-outlined open-menu">expand_more</span>';
+
+        $item_output = str_replace('</a>', '</a>' . $extra_element, $item_output);
+    }
+
 
     return $item_output;
 }
@@ -254,21 +271,31 @@ function custom_related_posts()
 
     $related_posts_query = new WP_Query($related_posts_args);
 
+
+
     if ($related_posts_query->have_posts()) { ?>
-    <section class="related-container">
-    <h3><?php echo pll__("Polecane dla Ciebie") ?></h3>
-        <ul class="related-posts">
-            <?php
-            while ($related_posts_query->have_posts()) {
-                $related_posts_query->the_post();
-                get_template_part('entry');
-            } ?>
-        </ul>
-<?php
+        <section class="related-container">
+            <h3><?php echo pll__("Polecane dla Ciebie") ?></h3>
+            <ul class="related-posts-swiper">
+                <div class="swiper-wrapper">
+                    <?php
+                    while ($related_posts_query->have_posts()) {
+                        $related_posts_query->the_post(); ?>
+                        <div class="swiper-slide">
+                            <?php get_template_part('entry'); ?>
+                        </div>
+                    <?php  } ?>
+                </div>
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </ul>
+        <?php
         wp_reset_postdata();
     } else {
         echo '<p>No related posts found.</p>';
     } ?>
-    </section>
- <?php  
+        </section>
+    <?php
 }
+
+
+//!!!! IMPORTANT for dropdown menu on mobile

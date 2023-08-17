@@ -48,6 +48,9 @@
       }
 
       .share {
+        @include bp($bp-mobile) {
+          display: none;
+          }
         p {
           color: white;
           font-family: $main_font_family;
@@ -243,8 +246,8 @@
     h3 {
         margin-bottom: 42px;
     }
-    .related-posts {
-        display: grid;
+    .related-posts-swiper {
+        // display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
     

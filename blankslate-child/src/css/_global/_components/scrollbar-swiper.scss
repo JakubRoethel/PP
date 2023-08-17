@@ -1,0 +1,13 @@
+.related-posts {
+    position: relative;
+    .swiper-scrollbar {
+        border-radius: 2px;
+        height: 5px;
+        margin-top: 50px;
+        position: relative;
+        max-width: 500px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+}

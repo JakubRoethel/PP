@@ -18,6 +18,7 @@
  /* ELEMENTS
  * ------------------------------------------------------------------------- */
 @import "_global/_components/header";
+@import "_global/_components/footer";
 @import "_global/_components/mega-menu.scss";
 @import "_global/_components/blog-posts.scss";
 @import "_global/_components/post-card.scss";
@@ -25,12 +26,37 @@
 @import "_global/_components/breadcrumbs.scss";
 @import "_global/_components/pagination.scss";
 @import "_global/_components/single-post.scss";
+@import "_global/_components/scrollbar-swiper.scss";
+@import "_global/_components/button.scss";
+
 
  /* SEARCH
  * ------------------------------------------------------------------------- */
 
+ @import "_global/_components/search.scss";
 
- @import "_global/_components/search";
+
+ /* PAGES
+ * ------------------------------------------------------------------------- */
+ @import "_global/_components/home.scss";
+ @import "_global/_components/contact.scss";
+
+
+ /* Templatesś
+ * ------------------------------------------------------------------------- */
+ @import "_global/_components/full-width-template.scss"; 
+
+
+ /* Splide
+ * ------------------------------------------------------------------------- */
+@import "@splidejs/splide/css";
+
+// or other themes
+@import '@splidejs/splide/css/skyblue';
+@import '@splidejs/splide/css/sea-green';
+
+// or only core styles
+@import '@splidejs/splide/css/core';
 
 
 

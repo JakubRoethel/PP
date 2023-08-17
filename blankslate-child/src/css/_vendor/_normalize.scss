@@ -544,3 +544,23 @@ table {
 }
 
 
+//inputs and textarea style for all of the system
+textarea, select,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="search"],
+input[type="password"], 
+input[type="email"] {
+  background-color: transparent;
+  border: 1px solid $primary_color !important;
+  color: $primary_color !important;
+  border-radius: 10px;
+  padding: 10px 10px 8px 10px;
+
+  &::placeholder {
+    opacity: 1 !important;
+    color: $primary_color !important;
+  }
+}
