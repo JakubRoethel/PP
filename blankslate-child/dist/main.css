@@ -1613,7 +1613,7 @@ header.category-info .archive-meta {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 519px) {
   .single-post header.post-info {
@@ -1631,6 +1631,8 @@ header.category-info .archive-meta {
   display: flex;
   z-index: 1;
   margin-top: 12px;
+  justify-content: space-between;
+  gap: 20px;
 }
 .single-post header.post-info .title-share-wrapper .entry-title {
   font-family: "Futura-pt", sans-serif;
@@ -1638,7 +1640,7 @@ header.category-info .archive-meta {
   font-size: 2.75rem;
   font-style: normal;
   font-weight: 700;
-  letter-spacing: 12.5px;
+  letter-spacing: 8.5px;
   text-transform: uppercase;
   z-index: 1;
 }
@@ -1970,6 +1972,70 @@ header.category-info .archive-meta {
   transition: transform 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
 
+.partner-card {
+  display: flex;
+  background: #f4f4f4;
+  margin-top: 32px;
+}
+.partner-card .left-col {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 24px 32px;
+}
+.partner-card .left-col .logo-title-container {
+  display: flex;
+  gap: 1.5rem;
+}
+.partner-card .left-col .logo-title-container img {
+  max-width: 80px;
+  max-height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: auto;
+}
+.partner-card .left-col .logo-title-container h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #21283E;
+  margin: auto 0;
+}
+.partner-card .left-col .partner-description {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  line-height: 120%;
+  color: #21283E;
+}
+.partner-card .left-col .partner-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.partner-card .left-col .partner-details div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.partner-card .left-col .partner-details span {
+  font-size: 1rem;
+  font-family: "Space Grotesk", sans-serif;
+  color: #21283E;
+  font-weight: 600;
+}
+.partner-card .right-col {
+  flex: 1;
+  height: auto;
+  background-position: center !important;
+  background-size: cover !important;
+}
+.partner-card .right-col img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
 /* SEARCH
 * ------------------------------------------------------------------------- */
 @keyframes fadeOutBottom {
@@ -2224,6 +2290,14 @@ header.category-info .archive-meta {
   z-index: 1;
   margin-bottom: 100px;
 }
+@media screen and (max-width: 519px) {
+  .home-video .filter-container {
+    width: 100%;
+    margin-top: -60px;
+    height: 100px;
+    margin-bottom: 40px;
+  }
+}
 
 .featured-content-wrapper {
   padding: 0rem 4.063rem;
@@ -2300,6 +2374,9 @@ header.category-info .archive-meta {
   height: auto;
   aspect-ratio: 2/1;
 }
+.posts-container-mobile .posts-slider-new-articles {
+  overflow: hidden;
+}
 .posts-container-mobile .posts-slider-new-articles img {
   height: auto;
   aspect-ratio: 1/1;
@@ -2318,6 +2395,11 @@ header.category-info .archive-meta {
   font-size: 2.5rem;
   margin-bottom: 44px;
 }
+@media screen and (max-width: 519px) {
+  .partners-section .partners-title {
+    margin-left: 16px;
+  }
+}
 .partners-section .splide .splide__list {
   gap: 40px;
 }
@@ -2327,7 +2409,7 @@ header.category-info .archive-meta {
 
 /* Templatesś
 * ------------------------------------------------------------------------- */
-.page-template-full-width-template header.page-info {
+header.page-info {
   margin: 0 90px;
   margin-top: 0;
   padding: 40px 130px;
@@ -2337,7 +2419,7 @@ header.category-info .archive-meta {
   background: grey;
   position: relative;
 }
-.page-template-full-width-template header.page-info::before {
+header.page-info::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -2347,23 +2429,25 @@ header.category-info .archive-meta {
   background: rgba(0, 0, 0, 0.3);
 }
 @media screen and (max-width: 519px) {
-  .page-template-full-width-template header.page-info {
+  header.page-info {
     margin: 0px;
     padding: 32px 16px;
   }
 }
 @media screen and (min-width: 520px) and (max-width: 1199px) {
-  .page-template-full-width-template header.page-info {
+  header.page-info {
     margin: 0px;
     padding: 32px 16px;
   }
 }
-.page-template-full-width-template header.page-info .title-share-wrapper {
+header.page-info .title-share-wrapper {
   display: flex;
   z-index: 1;
   margin-top: 12px;
+  justify-content: space-between;
+  gap: 20px;
 }
-.page-template-full-width-template header.page-info .title-share-wrapper .entry-title {
+header.page-info .title-share-wrapper .entry-title {
   font-family: "Futura-pt", sans-serif;
   color: #fff;
   font-size: 2.75rem;
@@ -2374,49 +2458,65 @@ header.category-info .archive-meta {
   z-index: 1;
 }
 @media screen and (max-width: 519px) {
-  .page-template-full-width-template header.page-info .title-share-wrapper .entry-title {
+  header.page-info .title-share-wrapper .entry-title {
     font-size: 2rem;
   }
 }
-.page-template-full-width-template .content a {
+header.page-info .archive-meta {
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  margin-top: 1.5rem;
+  z-index: 1;
+}
+@media screen and (max-width: 519px) {
+  header.page-info .archive-meta {
+    font-size: 1rem;
+  }
+}
+
+.content a {
   color: #282828 !important;
 }
-.page-template-full-width-template .content p {
+.content p {
   margin-bottom: 1rem;
 }
-.page-template-full-width-template .content h2,
-.page-template-full-width-template .content h3,
-.page-template-full-width-template .content h4 {
+.content h2,
+.content h3,
+.content h4 {
   margin: 42px 0 22px 0;
 }
 @media screen and (max-width: 519px) {
-  .page-template-full-width-template .content h2,
-  .page-template-full-width-template .content h3,
-  .page-template-full-width-template .content h4 {
+  .content h2,
+  .content h3,
+  .content h4 {
     margin: 16px 0 22px 0;
   }
 }
-.page-template-full-width-template .content h2 {
+.content h2 {
   text-transform: uppercase;
   font-family: futura-pt-bold, sans-serif;
   letter-spacing: 8px;
   font-size: 2rem;
 }
-.page-template-full-width-template .content .wp-block-gallery {
+.content .wp-block-gallery {
   margin: 42px 0;
 }
-.page-template-full-width-template .content .second-contact-block {
+.content .second-contact-block {
   width: 100%;
 }
-.page-template-full-width-template .content .wpforms-container {
+.content .wpforms-container {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
 }
-.page-template-full-width-template .content .wpforms-container .wpforms-submit-container {
+.content .wpforms-container .wpforms-submit-container {
   display: flex;
   justify-content: end;
 }
-.page-template-full-width-template .content .wpforms-container .wpforms-submit-container button {
+.content .wpforms-container .wpforms-submit-container button {
   font-weight: 400;
   padding: 20px 40px;
   height: auto;
