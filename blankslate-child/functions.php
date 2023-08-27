@@ -333,3 +333,39 @@ function toolset_fix_custom_posts_per_page( $query_string ){
 }
  
 add_filter( 'request', 'toolset_fix_custom_posts_per_page' );
+
+
+
+
+function my_acf_init() {
+    
+    acf_update_setting('google_api_key', 'AIzaSyAahL0gM3tYbrMTLPpQkC65ZC5bDWDJHXs');
+}
+
+add_action('acf/init', 'my_acf_init');
+
+
+
+function update_city_name_field($post_id) {
+    // Check if this is the 'partners' custom post type (replace with your actual post type)
+    if (get_post_type($post_id) === 'partners') {
+        // Get the value of the 'Lokalizacja' Google Maps field
+        $location = get_field('lokalizacja', $post_id);
+        
+        if ($location) {
+            // Extract the city name from the Google Maps field
+            
+            
+           
+            $city_name = $location[ 'city' ];
+            
+            // Update the 'City Name' text field
+            update_field('city_name', $city_name, $post_id);
+        }
+    }
+}
+
+add_action('acf/save_post', 'update_city_name_field', 20); // Trigger after ACF saves the post
+
+
+

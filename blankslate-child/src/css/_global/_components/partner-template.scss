@@ -1,0 +1,102 @@
+.partner-template {
+  .wrapper {
+    display: flex;
+    gap: 60px;
+
+    @include bp($bp-mobile) {
+      flex-direction: column;
+    }
+
+    .widgets_container {
+      width: 20%;
+
+      @include bp($bp-mobile) {
+        width: 100%;
+      }
+      .widget-title {
+        font-family: $second_font_family;
+        color: $primary_color;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .wpc-filters-section {
+        max-width: 100% !important;
+        width: 100% !important;
+
+        ul.wpc-filters-ul-list {
+          overflow-x: hidden;
+          max-height: 100% !important;
+
+          li {
+            font-family: $second_font_family;
+            a {
+              color: $primary_color;
+              text-transform: capitalize;
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      width: 80%;
+
+      @include bp($bp-mobile) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.acf-map {
+  width: 100%;
+  height: 400px;
+  border: #ccc solid 1px;
+  margin-bottom: 16px;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+  max-width: inherit !important;
+}
+
+/* Hide the default checkboxes */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Custom checkbox container */
+input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Custom checkbox design */
+input[type="checkbox"] + label::before {
+  content: "";
+  height: 20px;
+  min-width: 20px;
+  background-color: #eee;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+/* Styling for checked state */
+input[type="checkbox"]:checked + label::before {
+  background-color: $primary_color; /* Change this to your desired color */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg aria-hidden='true' focusable='false' data-prefix='far' data-icon='check' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-check fa-w-16' style=''%3e%3cpath fill='%23fff' d='M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z' class=''%3e%3c/path%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center center;
+  border: unset;
+}
+
+/* Display checkmark when checked */
+input[type="checkbox"]:checked + label::after {
+  display: block;
+}

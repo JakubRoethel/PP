@@ -1594,6 +1594,11 @@ header.category-info .archive-meta {
 
 .swiper-pagination span {
   background-color: white;
+  border-radius: 0;
+  opacity: 1;
+}
+.swiper-pagination span.swiper-pagination-bullet-active {
+  background-color: #21283E !important;
 }
 
 .single-post header.post-info {
@@ -1976,6 +1981,12 @@ header.category-info .archive-meta {
   display: flex;
   background: #f4f4f4;
   margin-top: 32px;
+  cursor: pointer;
+}
+@media screen and (max-width: 519px) {
+  .partner-card {
+    flex-direction: column;
+  }
 }
 .partner-card .left-col {
   flex: 3;
@@ -1983,6 +1994,11 @@ header.category-info .archive-meta {
   flex-direction: column;
   gap: 0.85rem;
   padding: 24px 32px;
+}
+@media screen and (max-width: 519px) {
+  .partner-card .left-col {
+    padding: 16px;
+  }
 }
 .partner-card .left-col .logo-title-container {
   display: flex;
@@ -1994,6 +2010,12 @@ header.category-info .archive-meta {
   -o-object-fit: cover;
      object-fit: cover;
   width: auto;
+}
+@media screen and (max-width: 519px) {
+  .partner-card .left-col .logo-title-container img {
+    max-width: 55px;
+    max-height: 55px;
+  }
 }
 .partner-card .left-col .logo-title-container h2 {
   font-size: 1.5rem;
@@ -2012,6 +2034,14 @@ header.category-info .archive-meta {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
+@media screen and (max-width: 519px) {
+  .partner-card .left-col .partner-details {
+    grid-template-columns: 1fr;
+  }
+}
+.partner-card .left-col .partner-details svg {
+  min-width: 24px;
+}
 .partner-card .left-col .partner-details div {
   display: flex;
   align-items: center;
@@ -2024,10 +2054,20 @@ header.category-info .archive-meta {
   font-weight: 600;
 }
 .partner-card .right-col {
-  flex: 1;
+  width: 300px;
+  overflow: hidden;
+}
+@media screen and (max-width: 519px) {
+  .partner-card .right-col {
+    width: 100%;
+  }
+}
+.partner-card .right-col .swiper-partners {
+  height: 100%;
+  position: relative;
+}
+.partner-card .right-col .swiper-partners .swiper-slide {
   height: auto;
-  background-position: center !important;
-  background-size: cover !important;
 }
 .partner-card .right-col img {
   height: 100%;
@@ -2358,7 +2398,13 @@ header.category-info .archive-meta {
 
 /* PAGES
 * ------------------------------------------------------------------------- */
-.home-video .swiper-slide .text-wrapper {
+.home-video {
+  background: linear-gradient(180deg, #26262d 0%, rgba(38, 38, 45, 0) 40%);
+}
+.home-video .hero_section {
+  mix-blend-mode: multiply;
+}
+.home-video .swiper .swiper-slide .text-wrapper {
   position: absolute;
   height: 100%;
   display: flex;
@@ -2366,25 +2412,25 @@ header.category-info .archive-meta {
   align-items: center;
   width: 100%;
 }
-.home-video .swiper-slide .text-wrapper .slide-text {
+.home-video .swiper .swiper-slide .text-wrapper .slide-text {
   font-size: 4.75rem;
   text-shadow: 0px 4px 32px black;
   font-family: "Futura-pt", sans-serif;
 }
 @media screen and (max-width: 519px) {
-  .home-video .swiper-slide .text-wrapper .slide-text {
+  .home-video .swiper .swiper-slide .text-wrapper .slide-text {
     font-size: 3.75rem;
     padding: 0 16px;
   }
 }
 @media screen and (min-width: 520px) and (max-width: 1199px) {
-  .home-video .swiper-slide .text-wrapper .slide-text {
+  .home-video .swiper .swiper-slide .text-wrapper .slide-text {
     font-size: 3.75rem;
     padding: 0 32px;
   }
 }
-.home-video .swiper-slide video,
-.home-video .swiper-slide img {
+.home-video .swiper .swiper-slide video,
+.home-video .swiper .swiper-slide img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -2831,6 +2877,105 @@ header.page-info .archive-meta {
   padding: 20px 40px;
   height: auto;
   border-radius: 0;
+}
+
+.partner-template .wrapper {
+  display: flex;
+  gap: 60px;
+}
+@media screen and (max-width: 519px) {
+  .partner-template .wrapper {
+    flex-direction: column;
+  }
+}
+.partner-template .wrapper .widgets_container {
+  width: 20%;
+}
+@media screen and (max-width: 519px) {
+  .partner-template .wrapper .widgets_container {
+    width: 100%;
+  }
+}
+.partner-template .wrapper .widgets_container .widget-title {
+  font-family: "Space Grotesk", sans-serif;
+  color: #21283E;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.partner-template .wrapper .widgets_container .wpc-filters-section {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+.partner-template .wrapper .widgets_container .wpc-filters-section ul.wpc-filters-ul-list {
+  overflow-x: hidden;
+  max-height: 100% !important;
+}
+.partner-template .wrapper .widgets_container .wpc-filters-section ul.wpc-filters-ul-list li {
+  font-family: "Space Grotesk", sans-serif;
+}
+.partner-template .wrapper .widgets_container .wpc-filters-section ul.wpc-filters-ul-list li a {
+  color: #21283E;
+  text-transform: capitalize;
+}
+.partner-template .wrapper .content {
+  width: 80%;
+}
+@media screen and (max-width: 519px) {
+  .partner-template .wrapper .content {
+    width: 100%;
+  }
+}
+
+.acf-map {
+  width: 100%;
+  height: 400px;
+  border: #ccc solid 1px;
+  margin-bottom: 16px;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+  max-width: inherit !important;
+}
+
+/* Hide the default checkboxes */
+input[type=checkbox] {
+  display: none;
+}
+
+/* Custom checkbox container */
+input[type=checkbox] + label {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Custom checkbox design */
+input[type=checkbox] + label::before {
+  content: "";
+  height: 20px;
+  min-width: 20px;
+  background-color: #eee;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+/* Styling for checked state */
+input[type=checkbox]:checked + label::before {
+  background-color: #21283E; /* Change this to your desired color */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg aria-hidden='true' focusable='false' data-prefix='far' data-icon='check' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-check fa-w-16' style=''%3e%3cpath fill='%23fff' d='M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z' class=''%3e%3c/path%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center center;
+  border: unset;
+}
+
+/* Display checkmark when checked */
+input[type=checkbox]:checked + label::after {
+  display: block;
 }
 
 /* Splide

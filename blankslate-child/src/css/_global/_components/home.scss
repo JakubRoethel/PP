@@ -2,37 +2,43 @@
 
 //hero section
 .home-video {
-  .swiper-slide {
-    .text-wrapper {
-      position: absolute;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
+  background: linear-gradient(180deg, #26262d 0%, rgba(38, 38, 45, 0) 40%);
+  .hero_section {
+    mix-blend-mode: multiply;
+  }
+  .swiper {
+    .swiper-slide {
+      .text-wrapper {
+        position: absolute;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
 
-      .slide-text {
-        font-size: 4.75rem;
-        text-shadow: 0px 4px 32px black;
-        font-family: $main_font_family;
+        .slide-text {
+          font-size: 4.75rem;
+          text-shadow: 0px 4px 32px black;
+          font-family: $main_font_family;
 
-        @include bp($bp-mobile) {
-          font-size: 3.75rem;
-          padding: 0 16px;
-        }
+          @include bp($bp-mobile) {
+            font-size: 3.75rem;
+            padding: 0 16px;
+          }
 
-        @include bp($bp-tablet) {
-          font-size: 3.75rem;
-          padding: 0 32px;
+          @include bp($bp-tablet) {
+            font-size: 3.75rem;
+            padding: 0 32px;
+          }
         }
       }
-    }
 
-    video,
-    img {
-      width: 100%;
-      object-fit: cover;
-      height: 80vh;
+      video,
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 80vh;
+      }
     }
   }
 
@@ -114,15 +120,14 @@
   }
 }
 
-//desktop posts list on front page 
+//desktop posts list on front page
 .home .posts-container {
   @include bp($bp-mobile) {
     display: none;
   }
 }
 
-
-//mobile posts list + slider 
+//mobile posts list + slider
 .posts-container-mobile {
   display: none;
 
@@ -148,9 +153,7 @@
   }
 }
 
-
 //partners slider
-
 
 .partners-section {
   margin-bottom: 100px;
@@ -178,4 +181,3 @@
     }
   }
 }
-

@@ -1,4 +1,5 @@
-<div class="partner-card">
+<?php $lokalizacja = get_field('lokalizacja'); ?>
+<div class="partner-card" data-lat="<?php echo $lokalizacja['lat']; ?>" data-lng="<?php echo $lokalizacja['lng']; ?>" data-title="<?php echo $args['partner']->post_title; ?>">
     <div class="left-col">
         <div class="logo-title-container">
             <?php
@@ -13,20 +14,25 @@
             <?php echo $args['partner']->post_content; ?> <!-- Retrieve partner description -->
         </div>
         <div class="partner-details">
-            <div class="adres">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <mask id="mask0_1253_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                        <rect width="24" height="24" fill="#000000" />
-                    </mask>
-                    <g mask="url(#mask0_1253_1534)">
-                        <path d="M4 21V11.625L2.2 13L1 11.4L4 9.1V6H6V7.575L12 3L23 11.4L21.8 12.975L20 11.625V21H4ZM6 19H11V15H13V19H18V10.1L12 5.525L6 10.1V19ZM4 5C4 4.16667 4.29167 3.45833 4.875 2.875C5.45833 2.29167 6.16667 2 7 2C7.28333 2 7.521 1.904 7.713 1.712C7.90433 1.52067 8 1.28333 8 1H10C10 1.83333 9.70833 2.54167 9.125 3.125C8.54167 3.70833 7.83333 4 7 4C6.71667 4 6.479 4.09567 6.287 4.287C6.09567 4.479 6 4.71667 6 5H4Z" fill="#21283E" />
-                    </g>
-                </svg>
-                <span>
-                    <?php the_field('adres'); ?>
-                </span>
 
-            </div>
+           
+            <?php if ($lokalizacja) : ?>
+                <div class="adres">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <mask id="mask0_1253_1534" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                            <rect width="24" height="24" fill="#000000" />
+                        </mask>
+                        <g mask="url(#mask0_1253_1534)">
+                            <path d="M4 21V11.625L2.2 13L1 11.4L4 9.1V6H6V7.575L12 3L23 11.4L21.8 12.975L20 11.625V21H4ZM6 19H11V15H13V19H18V10.1L12 5.525L6 10.1V19ZM4 5C4 4.16667 4.29167 3.45833 4.875 2.875C5.45833 2.29167 6.16667 2 7 2C7.28333 2 7.521 1.904 7.713 1.712C7.90433 1.52067 8 1.28333 8 1H10C10 1.83333 9.70833 2.54167 9.125 3.125C8.54167 3.70833 7.83333 4 7 4C6.71667 4 6.479 4.09567 6.287 4.287C6.09567 4.479 6 4.71667 6 5H4Z" fill="#21283E" />
+                        </g>
+                    </svg>
+                    <span>
+                        <?php echo $lokalizacja['address'];
+                        ?>
+                    </span>
+                </div>
+            <?php endif; ?>
+
             <div class="strona">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <mask id="mask0_1253_1539" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -72,10 +78,27 @@
 
                 </div>
             <?php endif; ?>
+
+
         </div>
     </div>
-    <div class="right-col" style="background: url(<?php echo get_the_post_thumbnail_url($args['partner']->ID); ?>)">
-        
-        <!-- <img src="<?php echo get_the_post_thumbnail_url($args['partner']->ID); ?>" alt="<?php echo $args['partner']->post_title; ?>"> -->
+    <div class="right-col">
+        <?php
+        // Inside the loop
+        $gallery_images = get_field('galeria');
+
+        if ($gallery_images && is_array($gallery_images)) { ?>
+            <div class="swiper-partners">
+                <div class="swiper-wrapper">
+                    <?php foreach ($gallery_images as $image) { ?>
+                        <div class="swiper-slide">
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        <?php    }
+        ?>
     </div>
 </div>

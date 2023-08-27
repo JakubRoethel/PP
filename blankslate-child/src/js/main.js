@@ -1,6 +1,7 @@
 import megaMenuService from "./modules/mega-menu";
 import megaMenuMobileService from "./modules/mega-menu-mobile";
 import swiperService from "./modules/swiper-objects";
+import gMapsService from "./modules/googlemaps";
 import AOS from "aos";
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
@@ -10,6 +11,7 @@ import showMoreButtonService from "./modules/show-more-button";
 megaMenuMobileService();
 swiperService();
 showMoreButtonService();
+gMapsService();
 AOS.init();
 
 
@@ -75,3 +77,13 @@ jQuery(document).ready(function ($) {
   document.addEventListener('om.Scripts.init', function(event) {
     event.detail.Scripts.enabled.fonts.googleFonts = false;
 });
+
+
+
+
+
+
+
+
+
+  

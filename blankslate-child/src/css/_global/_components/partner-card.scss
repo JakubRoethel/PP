@@ -2,6 +2,14 @@
   display: flex;
   background: #f4f4f4;
   margin-top: 32px;
+  cursor: pointer;
+
+  @include bp($bp-mobile) {
+    flex-direction: column;
+  }
+
+  @include bp($bp-tablet) {
+  }
 
   .left-col {
     flex: 3;
@@ -9,6 +17,10 @@
     flex-direction: column;
     gap: 0.85rem;
     padding: 24px 32px;
+
+    @include bp($bp-mobile) {
+      padding: 16px;
+    }
 
     .logo-title-container {
       display: flex;
@@ -19,6 +31,11 @@
         max-height: 80px;
         object-fit: cover;
         width: auto;
+
+        @include bp($bp-mobile) {
+          max-width: 55px;
+          max-height: 55px;
+        }
       }
 
       h2 {
@@ -41,6 +58,15 @@
       grid-template-columns: 1fr 1fr;
       gap: 12px;
 
+      @include bp($bp-mobile) {
+       grid-template-columns: 1fr;;
+      }
+
+      svg {
+        min-width: 24px;
+      }
+      
+
       div {
         display: flex;
         align-items: center;
@@ -57,16 +83,27 @@
   }
 
   .right-col {
-    flex: 1;
-    height: auto;
-    background-position: center !important;
-    background-size: cover !important;
+    width: 300px;
+    overflow: hidden;
+    @include bp($bp-mobile) {
+      width: 100%;
+    }
+
+    .swiper-partners {
+      height: 100%;
+      position: relative;
+
+      .swiper-slide {
+        height: auto;
+      }
+    }
 
     img {
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
     }
   }
 }
+
+
