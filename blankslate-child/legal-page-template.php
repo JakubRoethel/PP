@@ -1,11 +1,8 @@
 <?php
 /*
-Template Name: Full width Template
+Template Name: Legal page template
 */
-
-get_header();
-$featured_image_url = get_the_post_thumbnail_url(get_the_ID());
-?>
+get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
@@ -16,17 +13,7 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID());
             </div>
         </div>
 </div>
-</div>
-<div class="horisontal-single-post-banner">
-    <?php get_template_part('views/components/custom', 'generic-long-banner'); ?>
-</div>
-
-<?php get_template_part('views/common', 'img-text-section'); ?>
 
 
-
-
-</main>
-</div>
 
 <?php get_footer(); ?>

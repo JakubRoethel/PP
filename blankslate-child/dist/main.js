@@ -4343,6 +4343,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @splidejs/splide */ "./node_modules/@splidejs/splide/dist/js/splide.esm.js");
 /* harmony import */ var _splidejs_splide_extension_auto_scroll__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @splidejs/splide-extension-auto-scroll */ "./node_modules/@splidejs/splide-extension-auto-scroll/dist/js/splide-extension-auto-scroll.esm.js");
+/* harmony import */ var _modules_show_more_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/show-more-button */ "./src/js/modules/show-more-button.js");
+
 
 
 
@@ -4353,6 +4355,7 @@ __webpack_require__.r(__webpack_exports__);
 // megaMenuService();
 (0,_modules_mega_menu_mobile__WEBPACK_IMPORTED_MODULE_1__["default"])();
 (0,_modules_swiper_objects__WEBPACK_IMPORTED_MODULE_2__["default"])();
+(0,_modules_show_more_button__WEBPACK_IMPORTED_MODULE_6__["default"])();
 aos__WEBPACK_IMPORTED_MODULE_3___default().init();
 
 //search logic
@@ -4635,6 +4638,51 @@ function megaMenuService() {
     });
   });
 }
+
+/***/ }),
+
+/***/ "./src/js/modules/show-more-button.js":
+/*!********************************************!*\
+  !*** ./src/js/modules/show-more-button.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ showMoreButtonService)
+/* harmony export */ });
+function showMoreButtonService() {
+  var buttons = document.getElementsByClassName("button_show_more");
+  for (var i = 0; i < buttons.length; i++) {
+    var button = buttons[i];
+    var moreDescription = button.closest(".show-more-section").querySelector(".more_description");
+    var originalText = moreDescription.textContent.trim();
+    var buttonText = button.textContent.trim();
+    button.addEventListener("click", function () {
+      if (moreDescription.style.display === "block") {
+        moreDescription.classList.add("hide-animation");
+        moreDescription.classList.remove("show-animation");
+        setTimeout(function () {
+          moreDescription.style.display = "none";
+          moreDescription.classList.remove("hide-animation");
+          button.textContent = originalText;
+          var section = button.closest(".show-more-section");
+          section.scrollIntoView({
+            behavior: "smooth"
+          });
+        }, 300);
+      } else {
+        moreDescription.style.display = "block";
+        moreDescription.classList.add("show-animation");
+        moreDescription.classList.remove("hide-animation");
+        button.textContent = "Zwiń";
+        originalText = button.getAttribute("data-original-text");
+      }
+    });
+  }
+}
+;
 
 /***/ }),
 

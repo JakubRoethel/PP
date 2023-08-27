@@ -89,5 +89,6 @@ if ($latest_posts_query->have_posts()) { ?>
 
 
 <?php
+get_template_part('views/common', 'img-text-section');
 get_template_part('views/common', 'slider-partners');
 get_footer();

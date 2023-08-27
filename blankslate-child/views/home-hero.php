@@ -17,7 +17,7 @@
                                 <div class="text-wrapper">
                                 <h2 style="color: <?php echo $slide_color ?>" class="slide-text"><?php echo $slide_text ?></h2>
                                 </div>
-                                <video autoplay muted preload="metadata">
+                                <video autoplay muted loop preload="metadata">
                                     <source src="<?php echo $slide['url']; ?>" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>

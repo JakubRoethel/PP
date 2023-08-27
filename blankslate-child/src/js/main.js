@@ -4,10 +4,12 @@ import swiperService from "./modules/swiper-objects";
 import AOS from "aos";
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import showMoreButtonService from "./modules/show-more-button";
 
 // megaMenuService();
 megaMenuMobileService();
 swiperService();
+showMoreButtonService();
 AOS.init();
 
 

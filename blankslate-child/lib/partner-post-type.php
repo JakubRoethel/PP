@@ -36,7 +36,7 @@ function custom_post_type_partners() {
         'label'                 => __( 'Partner', 'text_domain' ),
         'description'           => __( 'Custom post type for partners', 'text_domain' ),
         'labels'                => $labels,
-        'supports'              =>   array( 'title', 'editor', 'custom-fields' ),
+        'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
         'taxonomies'            => array( 'category', 'post_tag' ),
         'hierarchical'          => false,
         'public'                => true,
@@ -46,11 +46,11 @@ function custom_post_type_partners() {
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'can_export'            => true,
-        'has_archive'           => true,
+        'has_archive'           => false,
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
         'capability_type'       => 'post',
-        'menu_icon'             => 'dashicons-businessperson', 
+        'menu_icon'             => 'dashicons-businessperson'
     );
     register_post_type( 'partners', $args );
 }

@@ -1,0 +1,231 @@
+.single-container {
+    padding: 0px 220px;
+    position: relative;
+
+    @include bp($bp-mobile) {
+        padding: 0px 16px;
+      }
+
+    .title {
+        margin-top: 80px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .description {
+        margin-top: 40px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1rem;
+        line-height: 120%;
+        color: #21283e;
+    }
+
+    //icon section
+
+    .icon-wrapper {
+        margin-top: 80px;
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+
+        @include bp($bp-mobile) {
+            gap:16px;
+          }
+
+        .icon-box {
+            flex: 1;
+
+            @include bp($bp-mobile) {
+                flex: unset;
+                width: 47%;
+              }
+
+            .img-wrapper {
+                background-color: #21283e;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 36px 120px;
+
+                @include bp($bp-mobile) {
+                    padding: 40px;
+                  }
+
+                img {
+                    object-fit: cover;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+
+            .icon-title {
+                font-family: futura-pt-bold, sans-serif;
+                font-size: 1.5rem;
+                color: #21283e;
+                margin-top: 16px;
+            }
+        }
+    }
+
+    // steps section //
+
+    .steps-box {
+        display: flex;
+        margin-top: 45px;
+        flex-wrap: wrap;
+
+        .single-step {
+            flex: 1;
+
+            @include bp($bp-mobile) {
+                flex: unset;
+              }
+            .number {
+                font-size: 5rem;
+            }
+
+            .step-title {
+                color: #282828;
+                font-family: futura-pt-bold, sans-serif;
+                font-size: 1.5rem;
+                margin-top: -30px;
+            }
+
+            .step-description {
+                display: flex;
+                align-items: center;
+                margin-top: 25px;
+                gap: 16px;
+
+                .description {
+                    margin-top: 0px;
+                    width: 70%;
+                }
+            }
+        }
+
+        .single-step:first-child{
+            @include bp($bp-mobile) {
+                margin-bottom: 90px;
+              }
+        }
+    }
+
+    // button //
+
+    .button-container {
+        margin-bottom: 80px;
+
+        @include bp($bp-mobile) {
+                margin-bottom: 0px;
+                position: absolute;
+                top: 220px;
+              }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+//partners slider
+
+.page-template-how-to-be-a-partner-template {
+    .partners-section {
+        background-color: #f8f8f8;
+        margin: 0px 150px;
+        padding: 100px 0px;
+
+        @include bp($bp-mobile) {
+            padding: 80px 16px;
+            margin: 80px 0px 0px 0px;
+          }
+
+        .partners-title {
+            margin-left: 70px;
+            @include bp($bp-mobile) {
+                margin-left: 16px;
+                font-size: 18px;
+              }
+        }
+
+        .splide {
+            padding: 3rem 0rem;
+        }
+    }
+}
+
+// show more section
+
+.show-more-section {
+    padding: 0px 220px;
+    margin-bottom: 100px;
+
+    @include bp($bp-mobile) {
+        padding: 0px 16px;
+      }
+
+    .title {
+        margin-top: 80px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .description {
+        font-size: 1rem;
+        line-height: 150%;
+        margin-top: 40px;
+    }
+
+    .button-wrapper {
+
+        .button_show_more {
+
+            @include bp($bp-mobile) {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+              }
+
+            @keyframes show-more {
+                from {
+                    opacity: 0;
+                    height: 0;
+                }
+                to {
+                    opacity: 1;
+                    height: auto;
+                }
+            }
+    
+            @keyframes hide-more {
+                from {
+                    opacity: 1;
+                    height: auto;
+                }
+                to {
+                    opacity: 0;
+                    height: 0;
+                }
+            }
+    
+            .show-animation {
+                animation: show-more 0.3s ease forwards;
+            }
+    
+            .hide-animation {
+                animation: hide-more 0.3s ease forwards;
+            }
+        }
+
+    }
+
+
+
+    .more_description {
+        display: none;
+        font-size: 1rem;
+        line-height: 150%;
+        padding-bottom: 16px;
+    }
+}

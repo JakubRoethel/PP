@@ -1,106 +1,124 @@
-.page-template-full-width-template {
-  header.page-info {
-    margin: 0 90px;
-    margin-top: 0;
-    padding: 40px 130px;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background: grey;
-    position: relative;
+// .page-template-full-width-template {
+header.page-info {
+  margin: 0 90px;
+  margin-top: 0;
+  padding: 40px 130px;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background: grey;
+  position: relative;
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.3);
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
 
-    @include bp($bp-mobile) {
-      margin: 0px;
-      padding: 32px 16px;
-    }
-    @include bp($bp-tablet) {
-      margin: 0px;
-      padding: 32px 16px;
-    }
+  @include bp($bp-mobile) {
+    margin: 0px;
+    padding: 32px 16px;
+  }
+  @include bp($bp-tablet) {
+    margin: 0px;
+    padding: 32px 16px;
+  }
 
-    .title-share-wrapper {
-      display: flex;
+  .title-share-wrapper {
+    display: flex;
+    z-index: 1;
+    margin-top: 12px;
+    justify-content: space-between;
+    gap: 20px;
+
+    .entry-title {
+      font-family: $main_font_family;
+      color: #fff;
+      font-size: 2.75rem;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 12.5px;
+      text-transform: uppercase;
       z-index: 1;
-      margin-top: 12px;
-
-      .entry-title {
-        font-family: $main_font_family;
-        color: #fff;
-        font-size: 2.75rem;
-        font-style: normal;
-        font-weight: 700;
-        letter-spacing: 12.5px;
-        text-transform: uppercase;
-        z-index: 1;
-        @include bp($bp-mobile) {
-          font-size: 2rem;
-        }
+      @include bp($bp-mobile) {
+        font-size: 2rem;
       }
     }
   }
 
-  .section {}
+  .archive-meta {
+    color: #fff;
+    font-family: $second_font_family;
+    font-size: 0.85rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 21px */
+    margin-top: 1.5rem;
+    z-index: 1;
 
-  .content {
-    a {
-      color: $text_color !important;
-    }
-
-    p {
-        margin-bottom: 1rem;
-    }
-
-    h2,
-    h3, 
-    h4 {
-      margin: 42px 0 22px 0;
-
-      @include bp($bp-mobile) {
-        margin: 16px 0 22px 0;
-      }
-    }
-
-    h2 {
-        text-transform: uppercase;
-        font-family: futura-pt-bold, sans-serif;
-        letter-spacing: 8px;
-        font-size: 2rem;
-    }
-
-    .wp-block-gallery {
-      margin: 42px 0;
-    }
-
-    .second-contact-block {
-        width: 100%;
-    }
-
-    //forms (contact and others
-    .wpforms-container {
-        font-family: $second_font_family;
-        font-weight: 500;
-
-        //submit button
-        .wpforms-submit-container {
-            display: flex;
-            justify-content: end;
-            button {
-                font-weight: 400;
-                padding: 20px 40px;
-                height: auto;
-                border-radius: 0;
-            }
-        }
+    @include bp($bp-mobile) {
+      font-size: 1rem;
     }
   }
 }
+
+.section {
+}
+
+.content {
+  a {
+    color: $text_color !important;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  h2,
+  h3,
+  h4 {
+    margin: 42px 0 22px 0;
+
+    @include bp($bp-mobile) {
+      margin: 16px 0 22px 0;
+    }
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-family: futura-pt-bold, sans-serif;
+    letter-spacing: 8px;
+    font-size: 2rem;
+  }
+
+  .wp-block-gallery {
+    margin: 42px 0;
+  }
+
+  .second-contact-block {
+    width: 100%;
+  }
+
+  //forms (contact and others
+  .wpforms-container {
+    font-family: $second_font_family;
+    font-weight: 500;
+
+    //submit button
+    .wpforms-submit-container {
+      display: flex;
+      justify-content: end;
+      button {
+        font-weight: 400;
+        padding: 20px 40px;
+        height: auto;
+        border-radius: 0;
+      }
+    }
+  }
+}
+// }
