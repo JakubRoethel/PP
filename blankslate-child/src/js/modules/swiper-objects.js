@@ -112,11 +112,82 @@ export default function swiperService() {
     // autoplay: {
     //   delay: 3000,
     // },
-    
+
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
   });
-  
+
+  new Swiper(".swiper-partners", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: false,
+
+    slidesPerView: 1,
+    loop: true,
+    slidesOffsetBefore: 0,
+    slidesOffsetAfter: 0,
+    // autoplay: {
+    //   delay: 3000,
+    // },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 16,
+      },
+      // when window width is >= 640px
+      740: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      1200: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  jQuery(document).ajaxComplete(function () {
+    new Swiper(".swiper-partners", {
+      effect: "slide",
+      grabCursor: true,
+      centeredSlides: false,
+
+      slidesPerView: 1,
+      loop: true,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0,
+      // autoplay: {
+      //   delay: 3000,
+      // },
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1.5,
+          spaceBetween: 16,
+        },
+        // when window width is >= 640px
+        740: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        1200: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+      },
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  });
 }

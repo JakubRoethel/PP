@@ -43,5 +43,12 @@
 .swiper-pagination {
     span {
         background-color: white;
+        border-radius: 0;
+        opacity: 1;
+
+        &.swiper-pagination-bullet-active {
+          background-color: $primary_color !important;
+     }
     }
+   
 }

@@ -36,7 +36,7 @@ function custom_post_type_partners() {
         'label'                 => __( 'Partner', 'text_domain' ),
         'description'           => __( 'Custom post type for partners', 'text_domain' ),
         'labels'                => $labels,
-        'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+        'supports'              => array( 'title', 'editor', 'custom-fields' ),
         'taxonomies'            => array( 'category', 'post_tag' ),
         'hierarchical'          => false,
         'public'                => true,
