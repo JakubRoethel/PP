@@ -1,0 +1,19 @@
+.simple-img-gallery {
+    padding: 80px 120px 150px 120px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+
+    @include bp($bp-mobile) {
+        padding: 0px 16px 40px 16px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+    img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        width: 100%;
+    }
+
+}

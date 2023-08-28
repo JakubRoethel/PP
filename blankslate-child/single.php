@@ -45,6 +45,7 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID());
                     <div class="post-content">
                         <?php the_content(); ?>
                     </div>
+                    <?php get_template_part('views/common', 'promo-long-baner'); ?>
                     <?php custom_related_posts(); ?>
                 <?php
                     // If comments are open or we have at least one comment, load up the comment template.
@@ -67,9 +68,7 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID());
             </div>
         </div>
 </div>
-<div class="horisontal-single-post-banner">
-    <?php get_template_part('views/components/custom', 'generic-long-banner'); ?>
-</div>
+
 
 
 

@@ -42,11 +42,10 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID());
 
 
 
-
             <div class="wrapper">
                 <div class="widgets_container">
                     <?php
-                    echo do_shortcode('[fe_widget id="35349" horizontal="yes" columns="3"]');
+                    echo do_shortcode('[fe_widget id="35426" horizontal="yes" columns="3"]');
                     ?>
                 </div>
                 <div class="content">

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Full width Template with text-img section
+Template Name: About project
 */
 
 get_header();
@@ -17,11 +17,12 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID());
         </div>
 </div>
 </div>
-<div class="horisontal-single-post-banner">
-    <?php get_template_part('views/components/custom', 'generic-long-banner'); ?>
-</div>
 
-<?php get_template_part('views/common', 'img-text-section'); ?>
+
+<?php 
+get_template_part('views/common', 'simple-img-gallery'); 
+get_template_part('views/common', 'slider-partners'); 
+?>
 
 
 

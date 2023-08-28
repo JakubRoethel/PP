@@ -81,7 +81,7 @@ export default function swiperService() {
     },
   });
 
-  var swiper2 = new Swiper(".related-posts-swiper", {
+  var swiper4 = new Swiper(".related-posts-swiper", {
     effect: "slide",
     grabCursor: true,
     centeredSlides: false,
@@ -189,5 +189,41 @@ export default function swiperService() {
         clickable: true,
       },
     });
+  });
+
+
+  var swiper5 = new Swiper(".swiper-banners", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: false,
+
+    slidesPerView: 1,
+    loop: true,
+    slidesOffsetBefore: 0,
+    slidesOffsetAfter: 0,
+    // autoplay: {
+    //   delay: 3000,
+    // },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      // when window width is >= 640px
+      740: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      1200: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
   });
 }
