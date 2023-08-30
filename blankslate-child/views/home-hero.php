@@ -34,9 +34,7 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            <div class="filter-container">
-                
-            </div>
+
         </div>
         </div>
     <?php endif

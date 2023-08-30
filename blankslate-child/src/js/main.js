@@ -6,12 +6,14 @@ import AOS from "aos";
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import showMoreButtonService from "./modules/show-more-button";
+import dropDownSearch from "./modules/drop-down-search";
 
 // megaMenuService();
 megaMenuMobileService();
 swiperService();
 showMoreButtonService();
 gMapsService();
+dropDownSearch()
 AOS.init();
 
 

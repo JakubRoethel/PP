@@ -118,9 +118,7 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID());
         </div>
 </div>
 </div>
-<div class="horisontal-single-post-banner">
-    <?php get_template_part('views/components/custom', 'generic-long-banner'); ?>
-</div>
+
 
 
 

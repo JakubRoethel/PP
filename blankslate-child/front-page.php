@@ -1,6 +1,7 @@
 <?php
 get_header();
 get_template_part('views/home', 'hero');
+get_template_part('views/home', 'custom-search-form');
 get_template_part('views/home', 'featured-content');
 
 
@@ -10,6 +11,7 @@ $args = array(
     'posts_per_page' => 8,            // Number of posts to retrieve (in this case, 8)
     'orderby'        => 'date',       // Order the posts by date
     'order'          => 'DESC',       // Show the newest posts first
+
 );
 
 
@@ -40,6 +42,7 @@ $rest_of_articles = new WP_Query($args2);
 
 if ($latest_posts_query->have_posts()) { ?>
     <section class="section">
+
         <h2 class="latests-posts-title" data-aos="slide-right"><?php echo pll__("Ostatnio opublikowane"); ?></h2>
         <div class="posts-container">
             <?php
@@ -48,40 +51,22 @@ if ($latest_posts_query->have_posts()) { ?>
                 // Output the post content or do something else with the post data
                 get_template_part('entry');
             }
-            wp_reset_postdata(); // Restore original post data after the loop
-            ?>
-        </div>
-        <div class="posts-container-mobile">
-            <div class="main-post">
-                <?php
-                while ($first_article->have_posts()) {
-                    $first_article->the_post();
-                    get_template_part('entry');
-                }
-                wp_reset_postdata(); // Restore original post data after the loop
-                ?>
+
+
+            $additional_banner_blog_post = get_field('additional_banner_blog_post', 'general_settings');  ?>
+            <div class="img-wrapper">
+            <?php the_ad('35604'); ?>
             </div>
-            <ul class="posts-slider-new-articles">
-                <div class="swiper-wrapper">
-                    <?php
-                    while ($rest_of_articles->have_posts()) {
-                        $rest_of_articles->the_post();  ?>
-                        <div class="swiper-slide">
-                            <?php get_template_part('entry'); ?>
-                        </div>
-                    <?php }
-                    wp_reset_postdata(); // Restore original post data after the loop
-                    ?>
-                </div>
-            </ul>
+
         </div>
+
         <div class="button-wrapper">
             <a href="blog" class="custom-button"><?php echo pll__('Przeglądaj wszystkie artykuły') ?></a>
         </div>
 
     </section>
 
-<?php wp_reset_postdata(); // Restore original post data
+<?php
 } else {
     // No posts found
     echo '<p>No posts found.</p>';

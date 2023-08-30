@@ -4345,6 +4345,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @splidejs/splide */ "./node_modules/@splidejs/splide/dist/js/splide.esm.js");
 /* harmony import */ var _splidejs_splide_extension_auto_scroll__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @splidejs/splide-extension-auto-scroll */ "./node_modules/@splidejs/splide-extension-auto-scroll/dist/js/splide-extension-auto-scroll.esm.js");
 /* harmony import */ var _modules_show_more_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/show-more-button */ "./src/js/modules/show-more-button.js");
+/* harmony import */ var _modules_drop_down_search__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/drop-down-search */ "./src/js/modules/drop-down-search.js");
+
 
 
 
@@ -4359,6 +4361,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_modules_swiper_objects__WEBPACK_IMPORTED_MODULE_2__["default"])();
 (0,_modules_show_more_button__WEBPACK_IMPORTED_MODULE_7__["default"])();
 (0,_modules_googlemaps__WEBPACK_IMPORTED_MODULE_3__["default"])();
+(0,_modules_drop_down_search__WEBPACK_IMPORTED_MODULE_8__["default"])();
 aos__WEBPACK_IMPORTED_MODULE_4___default().init();
 
 //search logic
@@ -4412,6 +4415,37 @@ new _splidejs_splide__WEBPACK_IMPORTED_MODULE_5__["default"](".splide", {
 document.addEventListener('om.Scripts.init', function (event) {
   event.detail.Scripts.enabled.fonts.googleFonts = false;
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/drop-down-search.js":
+/*!********************************************!*\
+  !*** ./src/js/modules/drop-down-search.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ dropDownSearch)
+/* harmony export */ });
+function dropDownSearch() {
+  // Znajdź wszystkie elementy o klasie .drop-down
+  var dropDowns = document.querySelectorAll(".drop-down");
+
+  // Iteruj przez każdy element .drop-down
+  dropDowns.forEach(function (dropDown) {
+    var labelContainer = dropDown.querySelector(".label-container");
+    var ulElement = dropDown.querySelector(".type");
+
+    // Dodaj nasłuchiwanie na kliknięcie na labelContainer
+    labelContainer.addEventListener("click", function () {
+      // Dodaj lub usuń klasę "show" w zależności od obecności klasy
+      ulElement.classList.toggle("show");
+    });
+  });
+}
+;
 
 /***/ }),
 

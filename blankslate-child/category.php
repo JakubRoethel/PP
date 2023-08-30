@@ -34,13 +34,8 @@ $category_description = get_field('opis-kategorii', 'term_' . $category_id);
 
     </header>
     <section class="section">
-        <!-- <div class="post_category_filter_container">
-            <div class="widgets_container">
-                <?php
-                echo do_shortcode('[fe_open_button]');
-                echo do_shortcode('[fe_widget id="63794" horizontal="yes" columns="3"]'); ?>
-            </div>
-        </div> -->
+
+ 
         <?php if (have_posts()) : ?>
             <div class="posts-container">
                 <?php
