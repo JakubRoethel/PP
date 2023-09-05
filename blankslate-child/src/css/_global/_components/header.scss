@@ -15,12 +15,13 @@
 }
 
 .home .main_header {
-    border-bottom: solid 1px rgba(35, 35, 35, 0.1);
-    padding: 25px 0;
-    position: fixed;
-    z-index: 2;
-    width: 100%;
+  border-bottom: solid 1px rgba(33, 40, 62, 0.5);
+  padding: 25px 0;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
 }
+
 
 header {
   display: flex;
@@ -125,13 +126,16 @@ header {
           justify-content: center;
           align-items: center;
 
-          img {
+          svg {
             max-width: 220px;
 
             @include bp($bp-mobile) {
-              max-width: 200px;
+              max-width: 170px;
             }
           }
+          
+
+          
         }
 
         .mega-menu-wrap {
@@ -151,14 +155,14 @@ header {
         align-items: center;
         gap: 2.813rem;
         justify-content: end;
-        min-width: 220px;
+        min-width: 190px;
 
         @include bp($bp-mobile) {
-            min-width: unset;
-          }
-          @include bp($bp-tablet) {
-            min-width: unset;
-          }
+          min-width: unset;
+        }
+        @include bp($bp-tablet) {
+          min-width: unset;
+        }
 
         .header_navigation {
           @include bp($bp-mobile) {
@@ -191,7 +195,7 @@ header {
           display: flex;
           gap: 13px;
           a {
-            color: $primary_color;
+            color: white;
             text-decoration: none;
             display: flex;
 
@@ -277,11 +281,11 @@ header {
   }
 
   .header__toggle__item {
-    background: $primary_color;
+    background: white;
     width: 30px;
     height: 2px;
     border-radius: 4px;
-    transition: all 0.2s ease-in;
+    transition: translate 0.2s ease-in;
 
     &:nth-child(2) {
       top: calc(50% - 1px);
@@ -305,7 +309,7 @@ header {
     will-change: transform;
     backface-visibility: hidden;
     padding-top: 20px;
-    z-index: 7;
+    z-index: 100;
     background: white;
     transition: all 0.2s ease 0.2s;
     height: 100%;
@@ -370,7 +374,7 @@ header {
         select {
           border: unset !important;
           font-family: $second_font_family;
-          font-size: .85rem;
+          font-size: 0.85rem;
           color: $primary_color;
           font-weight: 500;
           cursor: pointer;
@@ -554,15 +558,44 @@ header {
   }
 }
 
-
-
 .header--scrolled {
-    // position: fixed;
-    // top: 0;
-    // z-index: 2;
-    
-    .main_header {
-        backdrop-filter: blur(6px);
-        background: rgba(255, 255, 255, 0.178);
+  // position: fixed;
+  // top: 0;
+  // z-index: 2;
+
+  .main_header {
+    background: white;
+    opacity: 0.9;
+  }
+
+  .menu_wrapper {
+    .right-side-nav {
+      .icon_wrapper {
+        a {
+          color: $primary_color !important;
+
+        }
+      }
     }
+  }
+
+  .header__toggle__item {
+    background: $primary_color !important;
+
+  }
+
+  #mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item > a.mega-menu-link {
+    color: $primary_color !important;
+  } 
+  #mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item > a.mega-menu-link:hover {
+    color: white !important;
+  }
+
+  .header_logo {
+    svg {
+      path {
+        fill: $primary_color;
+      }
+    }
+  }
 }

@@ -24,6 +24,8 @@ footer {
         gap: 20px;
       }
 
+  
+
       .menu-title,
       .follow-title {
         color: white;
@@ -35,6 +37,9 @@ footer {
       }
 
       .menu {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
         .menu-item {
           a {
             color: white;
@@ -67,6 +72,7 @@ footer {
     .legal-menu-wrapper {
       display: flex;
       justify-content: space-between;
+      margin-top: 30px;
 
       @include bp($bp-mobile) {
         flex-direction: column-reverse;
@@ -112,6 +118,8 @@ footer {
           opacity: 70%;
           cursor: pointer;
           outline: none;
+          padding: 0px;
+          align-items: center;
 
           @include bp($bp-mobile) {
             padding-left: 0;

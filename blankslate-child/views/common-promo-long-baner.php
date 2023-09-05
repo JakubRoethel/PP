@@ -7,7 +7,7 @@ if ($long_banner) : ?>
         <div class="swiper-banners">
             <div class="swiper-wrapper">
                 <?php foreach ($sliders as $slide) {
-                    $slide_img = $slide['slider_img'];
+                    $ads_id =  $slide['ads_id'] ;
                     $slide_title = $slide['slider_title'];
                     $title_color = $slide['title_color'];
                     $slide_text = $slide['slider_text'];
@@ -31,8 +31,7 @@ if ($long_banner) : ?>
                                     </div>
                                 </div>
 
-                                <?php echo wp_get_attachment_image($slide_img, $size); ?>
-
+                                <?php the_ad($ads_id); ?>
 
                             </div>
                         </a>

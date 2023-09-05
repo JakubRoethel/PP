@@ -34,7 +34,7 @@ $category_description = get_field('opis-kategorii', 'term_' . $category_id);
 
     </header>
     <section class="section">
-
+ 
  
         <?php if (have_posts()) : ?>
             <div class="posts-container">

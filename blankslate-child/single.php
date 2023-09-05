@@ -61,6 +61,8 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID());
                             '<span class="screen-reader-text">' . __('Poprzedni wpis', 'twentyfifteen') . '</span> ',
                     ));
 
+                    get_template_part('views/common', 'slider-partners');
+
                 // End the loop.
                 endwhile;
                 ?>

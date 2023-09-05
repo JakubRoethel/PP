@@ -6,6 +6,11 @@
        margin: 0px;
       }
 
+
+      @include bp($bp-tablet) {
+        margin: 60px;
+    }
+    
     .swiper-banners {
         height: 100%;
         position: relative;

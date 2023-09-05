@@ -60,6 +60,7 @@ export default function swiperService() {
       clickable: true,
     },
   });
+  
 
   var swiper3 = new Swiper(".posts-slider-new-articles", {
     effect: "slide",
@@ -71,6 +72,10 @@ export default function swiperService() {
     // autoplay: {
     //   delay: 3000,
     // },
+    scrollbar: {
+      el: '.swiper-scrollbar',
+      draggable: true,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -94,6 +99,10 @@ export default function swiperService() {
       320: {
         spaceBetween: 20,
         slidesPerView: 1.5,
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+        }
         // grid: {
         //   rows: 2, // your amount of slides
         //   fill: "row",

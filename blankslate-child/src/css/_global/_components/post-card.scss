@@ -106,16 +106,26 @@
         font-family: $main_font_family;
         margin: 10px 0;
 
+        @include bp($bp-mobile) {
+          font-size: 14px;
+        }
+
         a {
           color: $description_color;
           text-decoration: none;
+
+          
         }
       }
 
       .description {
-        font-size: $lead_font_size;
+        font-size: 1rem;
         line-height: normal;
         font-family: $second_font_family; 
+
+        @include bp($bp-mobile) {
+          font-size: 14px;
+        }
 
         a {
           color: $description_color;

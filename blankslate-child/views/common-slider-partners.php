@@ -1,5 +1,6 @@
 <?php
 $images = get_field('partners_gallery', 'general_settings');
+$button_link = get_field('partners_button_link', 'general_settings');
 
 if ($images) : ?>
     <section class="partners-section">
@@ -15,6 +16,11 @@ if ($images) : ?>
                 </ul>
             </div>
         </section>
+        <div class="button-container">
+            <a href="<?php echo $button_link['url'] ?>" class="custom-button">
+            <?php echo $button_link['title'] ?>
+            </a>
+        </div>
     </section>
 
 <?php endif; ?>

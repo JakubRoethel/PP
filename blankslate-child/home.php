@@ -28,7 +28,10 @@ get_header();
 
     </header>
     <section class="section">
-
+    <div class="widgets_container">
+            <?php
+            echo do_shortcode('[fe_widget id="35449"]'); ?>
+        </div>
         </div>
         <?php if (have_posts()) : ?>
             <div class="posts-container">

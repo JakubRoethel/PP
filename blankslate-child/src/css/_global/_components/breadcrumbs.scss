@@ -6,6 +6,10 @@
   line-height: 120%; /* 14.4px */
   z-index: 1;
 
+  @include bp($bp-mobile) {
+    padding-bottom: 14px;
+}
+
   a {
     color: #fff;
   }

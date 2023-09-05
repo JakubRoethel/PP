@@ -175,6 +175,10 @@
         display: flex;
         flex-direction: column;
 
+        .required {
+          color: red;
+        }
+
         .logged-in-as {
           margin-bottom: 16px;
           a {
@@ -195,14 +199,33 @@
             }
             input {
               width: 100%;
+            
             }
           }
         }
         .comment-form-comment {
           textarea {
             width: 100%;
+            border-radius: 0px;
+            margin-top: 8px;
           }
         }
+
+        .comment-form-author, .comment-form-email {
+
+          display: flex;
+          flex-direction: column;
+          input {
+            border-radius: 0px;
+            margin-top: 8px;
+          }
+        }
+
+        .comment-form-url {
+          display: none;
+        }
+
+
         .form-submit {
           display: flex;
           justify-content: start;
@@ -216,6 +239,7 @@
             text-align: center;
             text-decoration: none;
             max-width: 325px;
+            border-radius: 0px;
 
             &:hover {
               background-color: #131c38;
@@ -245,6 +269,8 @@
 
   .related-container {
     padding-top: 44px;
+    overflow: hidden;
+
     h3 {
         margin-bottom: 42px;
     }
@@ -252,13 +278,25 @@
         // display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
+        position: relative;
     
         @include bp($bp-mobile) {
           grid-template-columns: repeat(1, 1fr);
+          padding-bottom: 30px;
+
+          .swiper-scrollbar {
+            position: unset;
+            margin-top: 10px;
+            .swiper-scrollbar-drag{
+            background-color: $primary_color;
+            }
+          }
         }
         @include bp($bp-tablet) {
           grid-template-columns: repeat(2, 1fr);
         }
+
+       
     
         article {
           position: relative;
@@ -343,6 +381,19 @@
           }
         }
       }
+  }
+
+
+  .partners-section {
+
+    .partners-title {
+      margin: 0px;
+    }
+
+    .splide {
+      padding: 3em 0px;
+    }
+
   }
   
 }

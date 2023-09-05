@@ -10,6 +10,11 @@
         gap: 20px;
       }
 
+      @include bp($bp-tablet) {
+        padding: 0px 60px 40px 60px;
+        gap: 20px;
+      }
+
     img {
         aspect-ratio: 1/1;
         object-fit: cover;

@@ -56,6 +56,7 @@ if (!function_exists('pomorskie_prestige_setup')) :
         register_nav_menus(array(
             'menu-1' => esc_html__('Primary', 'pomorskie_prestige'),
             'menu-2' => esc_html__('Footer', 'pomorskie_prestige'),
+            'menu-3' => esc_html__('Legal', 'pomorskie_prestige'),
         ));
     }
 endif;
@@ -70,11 +71,6 @@ function register_acf_blocks() {
 
 
 
-
-
-
-
-
 add_action( 'init', 'register_acf_blocks' );
 
 
@@ -85,6 +81,8 @@ function studio_scripts()
     wp_enqueue_style('main');
     wp_register_style('custom', get_stylesheet_directory_uri() . '/src/css/custom.css', [], 1, 'all');
     wp_enqueue_style('custom');
+
+    
 
     wp_register_script('main', get_stylesheet_directory_uri() . '/dist/main.js', ['jquery', 'acf-input'], 1, true);
     wp_enqueue_script('main');
@@ -286,7 +284,7 @@ function custom_related_posts()
                         </div>
                     <?php  } ?>
                 </div>
-                <!-- <div class="swiper-scrollbar"></div> -->
+                <div class="swiper-scrollbar"></div>
             </ul>
         <?php
         wp_reset_postdata();

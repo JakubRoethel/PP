@@ -23,6 +23,12 @@
     align-items: center;
     font-size: 14px;
 
+    @include bp($bp-mobile) {
+      font-size: 12px;
+  }
+
+
+
     &.dots {
         background: transparent !important;
         border: unset;

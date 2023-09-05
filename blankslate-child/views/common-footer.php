@@ -67,14 +67,18 @@
 
         <div class="legal-menu-wrapper">
             <div class="submenu-wrapper">
-                <a href="#"><?php echo pll__('Polityka prywatności') ?></a>
-                <a href="#"><?php echo pll__('Polityka cookies') ?></a>
+            <?php
+                wp_nav_menu(array(
+
+                    'theme_location' => 'menu-3',
+                    'menu_id'        => 'footer-legal-menu',
+                ));
+                ?>
             </div>
             <div class="translation_dropdown">
                 <?php
-                pll_the_languages(array('dropdown' => 1));
+                pll_the_languages(array('dropdown' => 2));
 
-             
                 ?>
             </div>
         </div>

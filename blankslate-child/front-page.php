@@ -8,7 +8,7 @@ get_template_part('views/home', 'featured-content');
 $args = array(
     'post_type'      => 'post',       // The post type you want to query (e.g., 'post', 'page', etc.)
     'post_status'    => 'publish',    // Retrieve only published posts
-    'posts_per_page' => 8,            // Number of posts to retrieve (in this case, 8)
+    'posts_per_page' => 9,            // Number of posts to retrieve (in this case, 8)
     'orderby'        => 'date',       // Order the posts by date
     'order'          => 'DESC',       // Show the newest posts first
 
@@ -41,8 +41,10 @@ $first_article = new WP_Query($args1);
 $rest_of_articles = new WP_Query($args2);
 
 if ($latest_posts_query->have_posts()) { ?>
-    <section class="section">
-
+    <section class="section home-post-container">
+    <div class="filter-container filters-post">
+    <?php echo do_shortcode('[fe_widget id="35447"]'); ?>
+        </div>
         <h2 class="latests-posts-title" data-aos="slide-right"><?php echo pll__("Ostatnio opublikowane"); ?></h2>
         <div class="posts-container">
             <?php
@@ -58,6 +60,32 @@ if ($latest_posts_query->have_posts()) { ?>
             <?php the_ad('35604'); ?>
             </div>
 
+        </div>
+
+        <div class="posts-container-mobile">
+            <div class="main-post">
+                <?php
+                while ($first_article->have_posts()) {
+                    $first_article->the_post();
+                    get_template_part('entry');
+                }
+                wp_reset_postdata(); // Restore original post data after the loop
+                ?>
+            </div>
+            <ul class="posts-slider-new-articles">
+                <div class="swiper-wrapper">
+                    <?php
+                    while ($rest_of_articles->have_posts()) {
+                        $rest_of_articles->the_post();  ?>
+                        <div class="swiper-slide">
+                            <?php get_template_part('entry'); ?>
+                        </div>
+                    <?php }
+                    wp_reset_postdata(); // Restore original post data after the loop
+                    ?>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </ul>
         </div>
 
         <div class="button-wrapper">

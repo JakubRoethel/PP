@@ -9,6 +9,10 @@
         background-color: white;
     }
 
+
+    @include bp($bp-tablet) {
+        margin: 0px 60px 80px 60px;
+    }
     .title {
         margin-bottom: 55px;
 
@@ -25,6 +29,10 @@
             flex-direction: column-reverse;
             position: relative;
             padding-bottom: 80px;
+        }
+
+        @include bp($bp-tablet) {
+            flex-direction: column;
         }
 
         .img-video-container {
@@ -99,6 +107,11 @@
         @include bp($bp-mobile) {
             margin: 0px;
          }
+
+         @include bp($bp-tablet) {
+            margin: 0px 60px 80px 60px;
+            padding: 50px 0px;
+        }
 
         .img-video-text-wrapper {
             flex-direction: row-reverse;
